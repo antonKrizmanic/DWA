@@ -44,7 +44,7 @@
 					</article>
 					<article class="col-sm-6">
 						<h2>Podaci o radnom iskustvu</h2>
-						<p>Prometna jedinia mladeži, Umag 2010 godine</p>
+						<p>Prometna jedinica mladeži, Umag 2010 godine</p>
 						<p>Vozač eko vozila u Istraturistu 3 sezone</p>
 
 					</article>
