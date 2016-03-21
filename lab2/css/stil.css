@@ -1,0 +1,48 @@
+html,body{
+	height: 100%;
+}
+header p{
+	display: inline;
+}
+.odjava{
+	display: inline-block;
+	background-color: #55aa55;
+	color:#aa6c39;
+	padding: 10px 20px;
+}
+.odjava:hover{
+	background-color: #2d882d !important;	
+	color:#aa6c39;	
+	text-decoration: none;
+}
+nav.col-sm-2{
+	padding: 0;	
+}
+nav.col-sm-2 li{
+	margin: 0;
+}
+nav a{
+	background-color: #55aa55;	
+	color:#aa6c39;
+}
+nav a:hover{
+	background-color: #2d882d !important;	
+	color:#aa6c39;	
+}
+.login{
+	margin-top: 200px;	
+}
+.login p{
+	color:#2d882d;	
+}
+
+.footer-wrapper{
+	background-color: #55aa55;
+	padding:50px 0px;
+	position: absolute;
+	bottom: 0;
+	width:100%;
+}
+.right{
+	float: right;
+}
