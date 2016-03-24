@@ -1,0 +1,177 @@
+*{
+	margin:0px;
+	padding: 0px;
+	border-sizing:border-box;
+	font-family: "Raleway",arial,sans-serif;	
+	line-height: 1.5em;
+}
+body{
+	font-size:16px !important;
+	background-color: #e7e8d1;
+}
+/*sve stranice*/
+
+header{
+	margin-top: 20px;		
+}
+header img{
+	float:left;
+}
+h1{
+	width:10%;
+	float: left;
+	-ms-word-break: keep-all;
+	    word-break: keep-all;
+}
+h1 span{
+	font-size:0.5em;
+}
+.nav-wrapper{
+	margin-top: 20px;	
+	background-color: #8e001c;
+}
+.navigacija{
+	width:100%;	
+}
+nav ul{
+	list-style-type: none;
+	margin:0;
+	padding: 0;
+}
+nav ul li{
+	display:inline-block;
+	font-size:0;
+}
+nav ul li a{
+	font-size:16px;
+	text-decoration: none;
+	color:#fbf7e4;
+	display: block;
+	padding: 20px 30px;
+}
+nav ul li a:hover{
+	background-color: #750000;
+	color:#e2decb;
+	text-decoration: none;
+}
+nav ul li ul{
+	z-index: 100;	
+	text-align: left;	
+	opacity: 0;
+	visibility: hidden;	
+	
+	position:absolute;
+}
+nav ul li:hover ul{
+	opacity: 1;
+	visibility: visible;	
+}
+nav li li{
+	display:block;
+	width:150px;
+	
+	background-color: #8e001c;
+}
+.right{
+	float:right;
+}
+ footer{
+ 	margin-top: 50px;
+ 	padding:50px;
+ 	background-color: #D3ceaa;
+ 	text-align: center;
+ 	font-size: 32px;
+}
+.index-footer{
+	margin-top: 0;
+}
+.content{
+	margin-top:20px;
+}
+
+/*Naslovnica*/
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 100%;
+      margin: auto;
+}
+
+/*predstave*/
+.theater-play figure{
+ 	position: relative;
+ 	margin-top: 40px;
+}
+.theater-play figure img{
+	max-width:100%;
+}
+.theater-play figcaption{
+	position: absolute;
+	bottom: 0;
+	display: inline-block;
+	background-color: rgba(66,66,66,0.5);
+	padding: 20px 30px;
+	color:#fff;	
+	font-size: 22px;
+}
+.theater-play a::before{
+	content: "";
+	position: absolute;
+	top:0;
+	left: 0;
+	right: 0;
+	bottom: 0;	
+}
+.theater-play a:hover::before{
+	background:rgba(0,0,0,0.5);
+}
+
+/*predstava*/
+.breadcrumb{
+	background-color: #e7e8d1;
+}
+.breadcrumb a{
+	color:black;
+	text-decora: none;
+}
+.predstava img{
+	max-width: 100%;
+}
+.predstava span{
+	font-weight: bold;
+}
+.predstava article{
+	margin-top:50px;
+}
+/*raspored*/
+table a{
+	color:black;
+	text-decoration: none;
+}
+table a:hover{
+	color:#8e001c;
+	text-decoration: underline;
+}
+
+/*asambl*/
+
+.actors img{		
+	margin:0 auto;
+}
+.actors .row{
+	margin-top: 50px;
+}
+
+
+/*kontakt*/
+.contact iframe{
+	width:100%;
+}
+/*o nama*/
+.about img{
+	float:left;
+	padding-right: 10px;
+}
+.about img{
+	max-width:40%;
+}
+
