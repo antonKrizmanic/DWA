@@ -82,6 +82,13 @@ nav li li{
  	text-align: center;
  	font-size: 32px;
 }
+footer a{
+	color:black;		
+}
+footer a:hover{
+	color:#555;	
+}
+
 .index-footer{
 	margin-top: 0;
 }
@@ -157,7 +164,7 @@ table a:hover{
 .actors img{		
 	margin:0 auto;
 }
-.actors .row{
+.actors div{
 	margin-top: 50px;
 }
 
