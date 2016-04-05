@@ -1,0 +1,21 @@
+﻿Proizvodi u Fantastic beasts imaju karakteristike:
+
+
+
+Naziv proizvoda: [string, slobodan tekst]
+
+
+Tip životinje: [elementi: pas, mačka, glodavci, ptice, ribice, gmazovi, ostalo] { strani ključ na drugu tablicu u koju dodati navedene elemente }
+
+Tip proizvoda: [elementi: hrana, poslastice, oprema, higijena, ostalo] { strani ključ na drugu tablicu u koju dodati navedene elemente }
+
+
+Opis proizvoda: [string, slobodan tekst]
+
+
+Cijena proizvoda: [realni broj]
+
+
+
+Uz ove podatke u bazi je potrebno držati i numerički indeks za svaki redak.
+
