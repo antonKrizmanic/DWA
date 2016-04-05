@@ -11,7 +11,7 @@
 	<?php include("../connect.php");?>
 </head>
 <body>
-	<?php include("navigation.php"); ?>
+	<?php include("navigation.php");?>
 	<div class="container">
 		<section class="content theater-play">
 			<h2>Popis svih predstava u sezoni</h2>

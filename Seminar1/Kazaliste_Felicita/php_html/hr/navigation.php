@@ -1,3 +1,6 @@
+<?php
+    $pageName = basename($_SERVER['PHP_SELF']);    
+?>
 <header>
 	<div class="container">
 		<img src="../../img/logo.png">
@@ -15,7 +18,9 @@
 				<li class="navbar-right"><a href="#">Jezik <span class="caret"></span></a>
               		<ul>
 	                    <li><a href="#">Hrvatski</a></li>
-	                    <li><a href="../tal/index.php">Talijanski</a></li>		                    
+						<?php
+	                    echo'<li><a href="../tal/'.$pageName.'">Talijanski</a></li>';
+	                    ?>
                   	</ul>
             	</li>    		
 			</ul>

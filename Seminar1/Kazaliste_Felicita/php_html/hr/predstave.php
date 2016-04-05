@@ -15,6 +15,7 @@
 	<div class="container">
 		<section class="content theater-play">
 			<h2>Popis svih predstava u sezoni</h2>
+			<diw class="row">
 			<?php
 				$query="SELECT predstava.id,slika,naziv_predstave FROM predstava
 						JOIN predstava_prijevod ON predstava.id=predstava_prijevod.id_predstava
@@ -34,6 +35,7 @@
 				</div>';
 				}				
 			?>
+			</diw>
 		</section>
 	</div>
 	<?php include("../footer.php");?>
