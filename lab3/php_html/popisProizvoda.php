@@ -82,17 +82,13 @@
 			function trazi(){
 				var unos=document.getElementById("search").value;
 				var trs = document.getElementsByTagName("tr");
-				var n=[];
+				
 				for(var i=1;i<trs.length;i++){
 					var c=trs[i].innerText.search(unos);
 					if(c==-1){
 						trs[i].style.display="none";	
 					}
-				}				
-				for(var i=0;i<n.length;i++){
-					alert(n[i].toString());
 				}
-
 			}
 		</script>
 </body>
