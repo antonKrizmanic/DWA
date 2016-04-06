@@ -45,6 +45,9 @@
 			</article>
 		</div>
 	</div>
-	<?php include("../footer.php");?>
+	<?php 
+		include("../footer.php");
+		mysqli_close($link);
+	?>
 </body>
 </html>

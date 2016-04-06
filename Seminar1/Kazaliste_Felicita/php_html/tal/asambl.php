@@ -28,11 +28,15 @@
 						<figcaption class="text-center">'.$row[0].'</figcaption>
 					</figure>		
 				</div>';
-				}				
+				}	
+
 			?>				
 		</section>
 	</div>
-	<?php include("../footer.php");?>
+	<?php 
+		include("../footer.php");
+		mysqli_close($link);
+	?>
 	
 </body>
 </html>
