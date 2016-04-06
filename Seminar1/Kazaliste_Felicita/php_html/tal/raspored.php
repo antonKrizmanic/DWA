@@ -14,7 +14,7 @@
 	<?php include("navigation.php"); ?>
 	<div class="container">
 		<div class="table-responsive">
-			<h2>Raspored odrzavanja predstava</h2>
+			<h2>Programma degli spettacoli</h2>
 			<table class="table table-striped table-bordered">
 				<thead>
 					<tr>						

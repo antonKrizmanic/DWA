@@ -14,7 +14,7 @@
 	<?php include("navigation.php");?>
 	<div class="container">
 		<section class="content theater-play">
-			<h2>Popis svih predstava u sezoni</h2>
+			<h2>Elenco degli spettacoli</h2>
 			<div class="row">
 			<?php
 				$query="SELECT predstava.id,slika,naziv_predstave FROM predstava

@@ -15,7 +15,7 @@
 	
 	<div class="container">
 	<section class="content actors">
-			<h2>Asambl kazalista</h2>
+			<h2>Ensamble del teatro</h2>
 			<?php
 				$query="SELECT ime_i_prezime,slika FROM glumci";
 				if($result=mysqli_query($link,$query))
