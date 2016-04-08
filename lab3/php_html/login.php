@@ -12,7 +12,10 @@
 	?>
 </head>
 <body>	
-		
+		<div class="reklama">
+			<p>Ovo je reklama</p>
+			<p id="zat" onclick="zatvori()">Zatvori reklamu</p>
+		</div>
 		<div class="container">
 			<header class="page-header">
 				<a href="#osobni_podaci">Osobni podaci</a>
@@ -41,34 +44,42 @@
 					<ul class="nav">
 						<li><a href="#">Zivotopis</a></li>
 						<li><a href="popisProizvoda.php">Popis proizvoda</a></li>
-						<li><a href="#">Opcija 3</a></li>
+						<li><a href="unosForme.php">Unos proizvoda</a></li>
 						<li><a href="#">Opcija 4</a></li>
 					</ul>
 				</nav>
 				<section class="col-sm-10 content">
 					
 					<article class="col-sm-12">						
-						<h2 id="osobni_podaci">Osobni podaci:</h2>
-						<p>Ime i prezime: Anton Krizmanić</p>
-						<p>Datum rođenja:08.10.1994</p>
-						<p>Mjesto rođenja:Rijeka</p>
+						<h2 id="osobni" onclick="sakrij(this.id)">Osobni podaci:</h2>
+						<div id="osobniPodaci">
+							<p>Ime i prezime: Anton Krizmanić</p>
+							<p>Datum rođenja:08.10.1994</p>
+							<p>Mjesto rođenja:Rijeka</p>
+						</div>
 					</article>
 					<article class="col-sm-12">						
-						<h2 id="podaci_skolovanje">Podaci o školovanju:</h2>
-						<p>Osnovna škole: Osnovna škola Marije i Line Umag, Umag</p>
-						<p>Srednja škola: Gospodarska škola Buje, Buje</p>
-						<p>Fakultet: Tehničko veleučilište Zagreb, Zagreb</p>
+						<h2 id="skolovanje" onclick="sakrij(this.id)">Podaci o školovanju:</h2>
+						<div id="skolovanjePodaci">
+							<p>Osnovna škole: Osnovna škola Marije i Line Umag, Umag</p>
+							<p>Srednja škola: Gospodarska škola Buje, Buje</p>
+							<p>Fakultet: Tehničko veleučilište Zagreb, Zagreb</p>
+						</div>
 
 					</article>
 					<article class="col-sm-12">						
-						<h2 id="podaci_o_radu">Podaci o radnom iskustvu</h2>
-						<p>Prometna jedinica mladeži, Umag 2010 godine</p>
-						<p>Vozač eko vozila u Istraturistu 3 sezone</p>
+						<h2 id="rad" onclick="sakrij(this.id)">Podaci o radnom iskustvu</h2>
+						<div id="radPodaci">
+							<p>Prometna jedinica mladeži, Umag 2010 godine</p>
+							<p>Vozač eko vozila u Istraturistu 3 sezone</p>
+						</div>
 
 					</article>
 					<article class="col-sm-12">						
-						<h2 id="vjestine">Znanja i vještine</h2>
-						<p>C,C++,C#,HTML,CSS,Javascript,PHP,ASP.NET</p>
+						<h2 id="vjestine" onclick="sakrij(this.id)">Znanja i vještine</h2>
+						<div id="vjestinePodaci">
+							<p>C,C++,C#,HTML,CSS,Javascript,PHP,ASP.NET</p>
+						</div>
 					</article>			
 				</section>
 			
@@ -79,6 +90,22 @@
 						<p>Copyright Fantastic beasts, 2016</p>		
 				</footer>		
 		</div>
-			
+			<script type="text/javascript">
+			function sakrij(element){
+				var id=element+"Podaci";				
+				var div=document.getElementById(id);
+				if(div.style.display=="block"){
+					div.style.display="none";
+				}
+				else {
+					div.style.display="block";
+				}
+			}
+			function zatvori(){
+				var div=document.querySelector(".reklama");
+				
+				div.style.visibility="hidden";
+			}
+		</script>
 </body>
 </html>

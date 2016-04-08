@@ -7,6 +7,7 @@
 	<link rel="stylesheet" href="../css/stil.css">
 	<?php		
 		include("connect.php");
+		session_start();
 	?>
 </head>
 <body>	
@@ -27,7 +28,7 @@
 					<ul class="nav">
 						<li><a href="login.php">Zivotopis</a></li>
 						<li><a href="#">Popis proizvoda</a></li>
-						<li><a href="#">Opcija 3</a></li>
+						<li><a href="unosForme.php">Unos proizvoda</a></li>
 						<li><a href="#">Opcija 4</a></li>
 					</ul>
 				</nav>
@@ -84,7 +85,7 @@
 				var trs = document.getElementsByTagName("tr");
 				
 				for(var i=1;i<trs.length;i++){
-					var c=trs[i].innerText.search(unos);
+					var c=trs[i].innerHTML.search(unos);
 					if(c==-1){
 						trs[i].style.display="none";	
 					}
