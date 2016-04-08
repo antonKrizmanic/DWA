@@ -12,34 +12,34 @@
 <body>
 	<?php include("navigation.php"); ?>
 	<?php
-		$query="SELECT naziv_predstave,slika,redatelj,tekst,kostimi,glumci,		FLOOR(TIME_TO_SEC(trajanje)/60),opis_predstave FROM predstava
+		$query="SELECT naziv_predstave as Naziv,Slika,Redatelj,Tekst,Kostimi,Glumci,FLOOR(TIME_TO_SEC(trajanje)/60)as Trajanje,opis_predstave as Opis FROM predstava
 				JOIN predstava_prijevod ON predstava.id=predstava_prijevod.id_predstava
 				JOIN jezik ON jezik.id=predstava_prijevod.id_jezik
 				WHERE jezik.jezik='Tal' AND predstava.id=".$_GET['id']."";
 		if($result=mysqli_query($link,$query))
-		$row=mysqli_fetch_row($result);		
+		$obj=mysqli_fetch_object($result);		
 	echo '<div class="container predstava">
 		<ul class="breadcrumb ">
 			<li><a href="index.php">Home</a></li>
 			<li><a href="predstave.php">Spettacoli</a></li>
-			<li>'.$row[0].'</li>
+			<li>'.$obj->Naziv.'</li>
 		</ul>
-		<h2>'.$row[0].'</h2>
-		<img src="'.$row[1].'" alt="'.$row[0].'">';
+		<h2>'.$obj->Naziv.'</h2>
+		<img src="'.$obj->Slika.'" alt="'.$obj->Naziv.'">';
 		?>	
 		<div class="row">
 			<article class="col-sm-6">
 				<?php
-				echo'<p>'.$row[7].'</p>';
+				echo'<p>'.$obj->Opis.'</p>';
 				?>
 			</article>
 			<article class="col-sm-6">
 				<?php
-					echo'<p><span>Regista:</span> '.$row[2].'</p>
-					<p><span>Testo:</span> '.$row[3].'</p>				
-					<p><span>Costumi:</span> '.$row[4].'</p>
-					<p><span>Attori:</span> '.$row[5].' </p>
-					<p><span>Durata predstave:</span> '.$row[6].' min</p>';
+					echo'<p><span>Regista:</span> '.$obj->Redatelj.'</p>
+					<p><span>Testo:</span> '.$obj->Tekst.'</p>				
+					<p><span>Costumi:</span> '.$obj->Kostimi.'</p>
+					<p><span>Attori:</span> '.$obj->Glumci.' </p>
+					<p><span>Durata predstave:</span> '.$obj->Trajanje.' min</p>';
 				?>				
 			</article>
 		</div>

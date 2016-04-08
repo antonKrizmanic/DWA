@@ -26,7 +26,7 @@
 				</thead>
 				<tbody>
 					<?php
-						$query="SELECT id_predstave,naziv_predstave,DATE_FORMAT(datum_i_vrijeme,'%e.%c.%Y') AS datum,TIME_FORMAT(datum_i_vrijeme,'%k:%i') AS vrijeme,cijena 
+						$query="SELECT id_predstave as Id,naziv_predstave as Naziv,DATE_FORMAT(datum_i_vrijeme,'%e.%c.%Y') AS Datum,TIME_FORMAT(datum_i_vrijeme,'%k:%i') AS Vrijeme,Cijena 
 							FROM predstava
 							JOIN termin ON termin.id_predstave=predstava.id
 							JOIN predstava_prijevod ON predstava.id=predstava_prijevod.id_predstava
@@ -35,12 +35,12 @@
 							ORDER BY datum,vrijeme;";
 						if($result=mysqli_query($link,$query))
 
-						while($row=mysqli_fetch_row($result)){
+						while($obj=mysqli_fetch_object($result)){
 							echo"<tr>
-								<td><a href='predstava.php?id=$row[0]'>$row[1]</a></td>
-								<td>$row[2]</td>
-								<td>$row[3]</td>
-								<td>$row[4] kn</td>
+								<td><a href='predstava.php?id=$obj->Id'>$obj->Naziv</a></td>
+								<td>$obj->Naziv</td>
+								<td>$obj->Datum</td>
+								<td>$obj->Cijena</td>
 							</tr>";
 						}
 

@@ -35,12 +35,12 @@
 							ORDER BY datum,vrijeme;";
 						if($result=mysqli_query($link,$query))
 
-						while($row=mysqli_fetch_row($result)){
+						while($obj=mysqli_fetch_object($result)){
 							echo"<tr>
-								<td><a href='predstava.php?id=$row[0]'>$row[1]</a></td>
-								<td>$row[2]</td>
-								<td>$row[3]</td>
-								<td>$row[4] kn</td>
+								<td><a href='predstava.php?id=$obj->Id'>$obj->Naziv</a></td>
+								<td>$obj->Naziv</td>
+								<td>$obj->Datum</td>
+								<td>$obj->Cijena</td>
 							</tr>";
 						}
 

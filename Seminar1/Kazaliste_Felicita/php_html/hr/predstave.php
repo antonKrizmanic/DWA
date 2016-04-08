@@ -17,19 +17,19 @@
 			<h2>Popis svih predstava u sezoni</h2>
 			<diw class="row">
 			<?php
-				$query="SELECT predstava.id,slika,naziv_predstave FROM predstava
+				$query="SELECT predstava.id AS id,slika,naziv_predstave FROM predstava
 						JOIN predstava_prijevod ON predstava.id=predstava_prijevod.id_predstava
 						JOIN jezik ON jezik.id=predstava_prijevod.id_jezik
 						WHERE jezik.jezik='Cro'";
 				if($result=mysqli_query($link,$query))
 
 				
-				while($row=mysqli_fetch_row($result)){
+				while($obj=mysqli_fetch_object($result)){
 				echo'<div class="col-sm-6">
 					<figure>
-						<a href="predstava.php?id='.$row[0].'">
-							<img src="'.$row[1].'">
-							<figcaption>'.$row[2].'</figcaption>
+						<a href="predstava.php?id='.$obj->id.'">
+							<img src="'.$obj->slika.'">
+							<figcaption>'.$obj->naziv_predstave.'</figcaption>
 						</a>
 					</figure>		
 				</div>';
