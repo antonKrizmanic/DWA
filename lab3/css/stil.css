@@ -60,3 +60,11 @@ header a:hover{
 	position: absolute;
 	top:40px;
 }
+.btn-default{
+	background-color: #55aa55;
+	color:#aa6c39;
+}
+.btn-default:hover{
+	background-color: #2d882d !important;	
+	color:#aa6c39;
+}

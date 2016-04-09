@@ -12,7 +12,7 @@
 	?>
 </head>
 <body>	
-		<div class="reklama">
+		<div class="reklama container">
 			<p>Ovo je reklama</p>
 			<p id="zat" onclick="zatvori()">Zatvori reklamu</p>
 		</div>

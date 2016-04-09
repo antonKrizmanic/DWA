@@ -33,8 +33,15 @@
 					</ul>
 				</nav>
 				<section class="col-sm-10 content">
-					<input type="text" id="search" name="search" placeholder="Upisi trazeni pojam">
-					<input type="submit" id="submit" onclick="trazi()">
+
+					<form class="form-inline">
+						<div class="form-group">
+							<label for="search">Trazeni pojam:</label>
+							<input type="text" id="search" name="search" placeholder="Upisi trazeni pojam" class="form-control ">							
+						</div>						
+						<input type="submit" id="submit" onclick="trazi()" class="btn btn-default" value="Pretraži stranicu">
+						
+					</form>
 					
 					<table class="table table-striped" id="tablica">
 						<thead>
@@ -48,10 +55,11 @@
 						</thead>
 						<tbody>
 						<?php						
-							$query="SELECT proizvodi.naziv,proizvod.vrstaProizvoda,zivotinje.nazivZivotinje,opisProizvoda,cijena
+							$query="SELECT proizvodi.naziv,proizvod.vrstaProizvoda,zivotinje.nazivZivotinje,opisProizvoda,cijena,proizvodi.id as id
 									FROM proizvodi
 									JOIN proizvod ON proizvodi.tipProizvoda=proizvod.id
-									JOIN zivotinje ON proizvodi.tipZivotinje=zivotinje.id;";
+									JOIN zivotinje ON proizvodi.tipZivotinje=zivotinje.id
+									ORDER BY id;";
 
 							if($result=mysqli_query($link,$query))
 

@@ -2,7 +2,8 @@
 SQLyog Community v12.15 (64 bit)
 MySQL - 5.7.8-rc : Database - fantastic_beasts
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -28,12 +29,45 @@ CREATE TABLE `proizvod` (
 
 /*Data for the table `proizvod` */
 
-insert  into `proizvod`(`id`,`vrstaProizvoda`) values 
-(1,'Hrana'),
-(2,'Poslastice'),
-(3,'Oprema'),
-(4,'Higijena'),
+insert  into `proizvod`(`id`,`vrstaProizvoda`) values 
+
+(1,'Hrana'),
+
+(2,'Poslastice'),
+
+(3,'Oprema'),
+
+(4,'Higijena'),
+
 (5,'Ostalo');
+
+/*Table structure for table `zivotinje` */
+
+DROP TABLE IF EXISTS `zivotinje`;
+
+CREATE TABLE `zivotinje` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nazivZivotinje` varchar(10) COLLATE utf8_croatian_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+/*Data for the table `zivotinje` */
+
+insert  into `zivotinje`(`id`,`nazivZivotinje`) values 
+
+(1,'pas'),
+
+(2,'Mačka'),
+
+(3,'Glodavci'),
+
+(4,'Ptice'),
+
+(5,'Ribice'),
+
+(6,'Gmazovi'),
+
+(7,'Ostalo');
 
 /*Table structure for table `proizvodi` */
 
@@ -55,38 +89,29 @@ CREATE TABLE `proizvodi` (
 
 /*Data for the table `proizvodi` */
 
-insert  into `proizvodi`(`id`,`naziv`,`tipZivotinje`,`tipProizvoda`,`opisProizvoda`,`cijena`) values 
-(1,'10x ROYAL CANIN Urban Life Junior - vrećica 150 g',1,1,'Hrana za štenad','75.58'),
-(3,'AKVARIJ Nadir',1,3,'Distributer vode 3L','81.48'),
-(7,'KRAKVET Poslastica za psa',1,2,'Čips za žvakanje','49.00'),
-(8,'AQUA EL Midikani 800',5,3,'Vanjski filter','454.90'),
-(9,'AKVARIJ',2,4,'Akvarij za mačke','41.18'),
-(10,'Beaphar kitty-milk, Federkur (Paganol)',4,1,'vitamin dodatak za hranu za ptice 50 ml','33.52'),
-(11,'KRAKVET',2,3,'Gradajući pijesak od bentonita compact morski 10l','39.21'),
-(12,'Držač voća',3,3,'Držač svježe hrane od kromiranog metala za vješanje na rešetke kaveza za higijensko hranjenje, brine za zabavu i kretanje pri jedenju.','11.60'),
-(13,'Poidełko za papige',4,3,'dimenzije: 3 x 6,7 x 11 cm','12.39'),
+insert  into `proizvodi`(`id`,`naziv`,`tipZivotinje`,`tipProizvoda`,`opisProizvoda`,`cijena`) values 
+
+(1,'10x ROYAL CANIN Urban Life Junior - vrećica 150 g',1,1,'Hrana za štenad','75.58'),
+
+(3,'AKVARIJ Nadir',1,3,'Distributer vode 3L','81.48'),
+
+(7,'KRAKVET Poslastica za psa',1,2,'Čips za žvakanje','49.00'),
+
+(8,'AQUA EL Midikani 800',5,3,'Vanjski filter','454.90'),
+
+(9,'AKVARIJ',2,4,'Akvarij za mačke','41.18'),
+
+(10,'Beaphar kitty-milk, Federkur (Paganol)',4,1,'vitamin dodatak za hranu za ptice 50 ml','33.52'),
+
+(11,'KRAKVET',2,3,'Gradajući pijesak od bentonita compact morski 10l','39.21'),
+
+(12,'Držač voća',3,3,'Držač svježe hrane od kromiranog metala za vješanje na rešetke kaveza za higijensko hranjenje, brine za zabavu i kretanje pri jedenju.','11.60'),
+
+(13,'Poidełko za papige',4,3,'dimenzije: 3 x 6,7 x 11 cm','12.39'),
+
 (14,'ANIMONDA Cat Snack Piletina i laneno sjeme 45g',2,2,'Ukusne mačje grickalice marke Animonda su napravljene od čistog pilećeg mesa koje je pažljivo pečeno. ','19.09');
 
-/*Table structure for table `zivotinje` */
 
-DROP TABLE IF EXISTS `zivotinje`;
-
-CREATE TABLE `zivotinje` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nazivZivotinje` varchar(10) COLLATE utf8_croatian_ci DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
-
-/*Data for the table `zivotinje` */
-
-insert  into `zivotinje`(`id`,`nazivZivotinje`) values 
-(1,'pas'),
-(2,'Mačka'),
-(3,'Glodavci'),
-(4,'Ptice'),
-(5,'Ribice'),
-(6,'Gmazovi'),
-(7,'Ostalo');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
