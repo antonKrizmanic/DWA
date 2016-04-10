@@ -45,3 +45,22 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+lab3/.vagrant/machines/default/virtualbox/action_provision
+lab3/.vagrant/machines/default/virtualbox/action_set_name
+lab3/config.yaml
+lab3/Vagrantfile
+lab3/.vagrant/machines/default/virtualbox/creator_uid
+lab3/.vagrant/machines/default/virtualbox/synced_folders
+*.md
+lab3/setup.rb
+lab3/.vagrant/machines/default/virtualbox/id
+lab3/.vagrant/machines/default/virtualbox/index_uuid
+Seminar1/Kazaliste_Felicita/.vagrant/machines/default/virtualbox/action_provision
+Seminar1/Kazaliste_Felicita/.vagrant/machines/default/virtualbox/action_set_name
+Seminar1/Kazaliste_Felicita/.vagrant/machines/default/virtualbox/creator_uid
+Seminar1/Kazaliste_Felicita/.vagrant/machines/default/virtualbox/id
+Seminar1/Kazaliste_Felicita/.vagrant/machines/default/virtualbox/index_uuid
+Seminar1/Kazaliste_Felicita/.vagrant/machines/default/virtualbox/synced_folders
+Seminar1/Kazaliste_Felicita/config.yaml
+Seminar1/Kazaliste_Felicita/Vagrantfile
+Seminar1/Kazaliste_Felicita/setup.rb
