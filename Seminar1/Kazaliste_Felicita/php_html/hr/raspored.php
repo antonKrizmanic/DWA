@@ -38,8 +38,8 @@
 						while($obj=mysqli_fetch_object($result)){
 							echo"<tr>
 								<td><a href='predstava.php?id=$obj->Id'>$obj->Naziv</a></td>
-								<td>$obj->Naziv</td>
 								<td>$obj->Datum</td>
+								<td>$obj->Vrijeme</td>
 								<td>$obj->Cijena</td>
 							</tr>";
 						}
