@@ -17,20 +17,19 @@
 	<section class="content actors">
 			<h2>Ensamble del teatro</h2>
 			<?php
-				$query="SELECT ime_i_prezime,slika FROM glumci";
+				$query="SELECT ime_i_prezime as Ime,Slika FROM glumci";
 				if($result=mysqli_query($link,$query))
 
 				
-				while($row=mysqli_fetch_row($result)){
+				while($obj=mysqli_fetch_object($result)){
 				echo'<div class="col-sm-6">
 					<figure>
-						<img src="'.$row[1].'" class="img-responsive" alt="Filip Anočić - Valentić"/>
-						<figcaption class="text-center">'.$row[0].'</figcaption>
+						<img src="'.$obj->Slika.'" class="img-responsive" alt="'.$obj->Ime.'"/>
+						<figcaption class="text-center">'.$obj->Ime.'</figcaption>
 					</figure>		
 				</div>';
-				}	
-
-			?>				
+				}				
+			?>						
 		</section>
 	</div>
 	<?php 

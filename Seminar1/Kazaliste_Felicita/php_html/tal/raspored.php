@@ -26,7 +26,7 @@
 				</thead>
 				<tbody>
 					<?php
-						$query="SELECT id_predstave,naziv_predstave,DATE_FORMAT(datum_i_vrijeme,'%e.%c.%Y') AS datum,TIME_FORMAT(datum_i_vrijeme,'%k:%i') AS vrijeme,cijena 
+						$query="SELECT id_predstave as Id,naziv_predstave as Naziv,DATE_FORMAT(datum_i_vrijeme,'%e.%c.%Y') AS Datum,TIME_FORMAT(datum_i_vrijeme,'%k:%i') AS Vrijeme,Cijena 
 							FROM predstava
 							JOIN termin ON termin.id_predstave=predstava.id
 							JOIN predstava_prijevod ON predstava.id=predstava_prijevod.id_predstava
