@@ -135,6 +135,39 @@ insert  into `termin`(`id`,`datum_i_vrijeme`,`id_predstave`) values
 (5,'2016-04-05 18:00:00',16),
 (6,'2016-04-05 20:00:00',17);
 
+/*Table structure for table `uloge` */
+
+DROP TABLE IF EXISTS `uloge`;
+
+CREATE TABLE `uloge` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_predstave` int(11) DEFAULT NULL,
+  `id_glumca` int(11) DEFAULT NULL,
+  `ime_uloge` varchar(60) COLLATE utf8_croatian_ci DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `id_predstave` (`id_predstave`),
+  KEY `id_glumca` (`id_glumca`),
+  CONSTRAINT `uloge_ibfk_1` FOREIGN KEY (`id_predstave`) REFERENCES `predstava` (`id`),
+  CONSTRAINT `uloge_ibfk_2` FOREIGN KEY (`id_glumca`) REFERENCES `glumci` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 COLLATE=utf8_croatian_ci;
+
+/*Data for the table `uloge` */
+
+insert  into `uloge`(`id`,`id_predstave`,`id_glumca`,`ime_uloge`) values 
+(1,12,1,'Marko'),
+(2,12,5,'Ivana'),
+(3,13,2,'Kristijan'),
+(4,13,3,'Ivan'),
+(5,14,4,'Ana'),
+(6,14,6,'Sanja'),
+(7,15,1,'Toni'),
+(8,15,2,'Luka'),
+(9,16,3,'Darko'),
+(10,16,4,'Lucija'),
+(11,17,5,'Marija'),
+(12,17,6,'Duška'),
+(13,12,3,'Hrvoje');
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
