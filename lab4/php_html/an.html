@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fantastic beasts</title>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/stil.css">
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.1/angular.min.js"></script>
+	
+</head>
+<body ng-app="fantastic">	
+		
+		<div class="container">
+			<header class="page-header">				
+				<div class="row">
+					<div class="col-sm-6">						
+						<img src="../img/fantBeastsLogo.png" alt="Fantastic beasts logo" class="img-responsive">
+					</div>
+					<div class="col-sm-2 col-sm-offset-4">
+											
+						<a href="login.html" class="odjava">Odjava</a>
+					</div>
+				</div>
+			</header>			
+				<nav class="col-sm-2">
+					<ul class="nav">
+						<li><a href="login.php">Zivotopis</a></li>
+						<li><a href="#">Popis proizvoda</a></li>
+						<li><a href="unosForme.php">Unos proizvoda</a></li>
+						<li><a href="#">Opcija 4</a></li>
+					</ul>
+				</nav>
+				<section class="col-sm-10 content">
+
+					<form class="form-inline">
+						<div class="form-group">
+							<label for="search">Trazeni pojam:</label>
+							<input type="text" ng-model="filtriraj" id="search" name="search" placeholder="Upisi trazeni pojam" class="form-control ">							
+						</div>						
+						<input type="submit" id="submit" onclick="trazi()" class="btn btn-default" value="Pretraži stranicu">
+						
+					</form>
+					
+					<div  ng-controller="proizvodiController">
+						<table class="table table-striped" id="tablica">
+							<thead>
+								<tr>
+									<th>Naziv proizvoda</th>
+									<th>Vrsta proizvoda</th>
+									<th>Zivotinja</th>
+									<th>Opis</th>
+									<th>Cijena</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="item in items | orderBy:'Vrsta' | filter: filtriraj">
+									<td>{{item.Naziv}}</td>
+									<td>{{item.Vrsta}}</td>
+									<td>{{item.Zivotinja}}</td>
+									<td>{{item.Opis}}</td>
+									<td>{{item.Cijena}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</section>
+			
+		</div>
+		
+		<div class="footer-wrapper">		
+				<footer class="container" >		
+						<p>Copyright Fantastic beasts, 2016</p>		
+				</footer>		
+		</div>	
+		<script type="text/javascript">
+			var app=angular.module('fantastic',[]);
+
+			app.controller('proizvodiController',function($scope,$http){
+				$http.get("getItem.php")
+				.then(function (response) {$scope.items=response.data.records;});
+			});
+
+
+
+			function trazi(){
+				var unos=document.getElementById("search").value;
+				var trs = document.getElementsByTagName("tr");
+				
+				for(var i=1;i<trs.length;i++){
+					var c=trs[i].innerHTML.search(unos);
+					if(c==-1){
+						trs[i].style.display="none";	
+					}
+				}
+			}
+		</script>
+</body>
+</html>
