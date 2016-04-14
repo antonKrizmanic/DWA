@@ -35,14 +35,14 @@
 				</nav>
 				<section class="col-sm-10 content">
 
-					<form class="form-inline">
+					<div class="form-inline">
 						<div class="form-group">
 							<label for="search">Trazeni pojam:</label>
 							<input type="text" id="search" name="search" placeholder="Upisi trazeni pojam" class="form-control ">							
 						</div>						
 						<input type="submit" id="submit" onclick="trazi()" class="btn btn-default" value="Pretraži stranicu">
 						
-					</form>
+					</div>
 					
 					<table class="table table-striped" id="tablica">
 						<thead>

@@ -40,14 +40,14 @@
 				</nav>
 				<section class="col-sm-10 content">
 
-					<form class="form-inline">
+					<div class="form-inline">
 						<div class="form-group">
 							<label for="search">Trazeni pojam:</label>
 							<input type="text" id="search" name="search" placeholder="Upisi trazeni pojam" class="form-control ">							
 						</div>						
 						<input type="submit" id="submit" onclick="trazi()" class="btn btn-default" value="Pretraži stranicu">
 						
-					</form>
+					</div>
 					
 					<table class="table table-striped" id="tablica">
 						<thead>
@@ -61,7 +61,8 @@
 						</thead>
 						<tbody>
 						<?php
-							$results2=ORM::for_table('proizvodi')->select_many(array('Naziv'=>'proizvodi.naziv','Vrsta'=>'proizvod.vrstaProizvoda','Zivotinja'=>'zivotinje.nazivZivotinje','Opis'=>'proizvodi.opisProizvoda','Cijena','id'=>'proizvodi.id'))->
+							$results2=ORM::for_table('proizvodi')->select_many(array('Naziv'=>'proizvodi.naziv','Vrsta'=>'proizvod.vrstaProizvoda','Zivotinja'=>'zivotinje.nazivZivotinje',
+								'Opis'=>'proizvodi.opisProizvoda','Cijena','id'=>'proizvodi.id'))->
 							join('proizvod',array('proizvodi.tipProizvoda','=','proizvod.id'))->							
 							join('zivotinje',array('proizvodi.tipZivotinje','=','zivotinje.id'))->
 							order_by_asc('id')->
