@@ -66,3 +66,10 @@ Seminar1/Kazaliste_Felicita/Vagrantfile
 Seminar1/Kazaliste_Felicita/setup.rb
 lab4/.vagrant/machines/default/virtualbox/synced_folders
 lab4/.vagrant/machines/default/virtualbox/action_provision
+lab4/.vagrant/machines/default/virtualbox/action_set_name
+lab4/.vagrant/machines/default/virtualbox/id
+*.rb
+lab4/config.yaml
+lab4/.vagrant/machines/default/virtualbox/creator_uid
+lab4/.vagrant/machines/default/virtualbox/index_uuid
+lab4/Vagrantfile
