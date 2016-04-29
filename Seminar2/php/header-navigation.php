@@ -31,6 +31,7 @@
         <li <?php if ($pageName=="contact") echo 'class="active"'; ?>><a href="contact.php">Kontakt</a></li>
         <!--link je vidljiv samo adminu-->
         <li <?php if ($pageName=="rezervations") echo 'class="active"'; ?>><a href="rezervations.php">Rezervacije</a></li>
+        <li <?php if ($pageName=="locations") echo 'class="active"'; ?>><a href="locations.php">Lokacije</a></li>
       </ul>      
       <ul class="nav navbar-nav navbar-right">        
         <li class="dropdown">

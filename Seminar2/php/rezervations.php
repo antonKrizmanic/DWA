@@ -39,7 +39,7 @@
 								<td>Zagreb, 28.4.2016 08:00</td>
 								<td>459.59kn</td>
 								<td><a href="#">Obrisi</a></td>
-								<td><a href="#" data-toggle="modal" data-target="#edit-modal">Uredi</a></td>
+								<td><a href="#" data-toggle="modal" data-target="#edit-rezervation-modal">Uredi</a></td>
 							</tr>
 							<tr>
 								<td>Toni Markovic</td>
@@ -47,7 +47,7 @@
 								<td>Zagreb, 28.4.2016 08:00</td>
 								<td>759.59kn</td>
 								<td><a href="#">Obrisi</a></td>
-								<td><a href="#" data-toggle="modal" data-target="#edit-modal">Uredi</a></td>
+								<td><a href="#" data-toggle="modal" data-target="#edit-rezervation-modal">Uredi</a></td>
 							</tr>
 							<tr>
 								<td>Marko Markovic</td>
@@ -55,7 +55,7 @@
 								<td>Zagreb, 28.4.2016 08:00</td>
 								<td>59.59kn</td>
 								<td><a href="#">Obrisi</a></td>
-								<td><a href="#" data-toggle="modal" data-target="#edit-modal">Uredi</a></td>
+								<td><a href="#" data-toggle="modal" data-target="#edit-rezervation-modal">Uredi</a></td>
 							</tr>
 						</tbody>	
 					</table>
@@ -67,7 +67,7 @@
 
 
 
-<div class="modal fade" id="edit-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+<div class="modal fade" id="edit-rezervation-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">        
@@ -78,7 +78,7 @@
       </div>             
       
       <div id="div-forms">      
-        <!--Start Login Form -->
+        <!--Start Edit Form -->
         <form id="edit-form">
           <div class="modal-body">            
             <div class="form-group">
@@ -159,7 +159,7 @@
                         
           </div>
         </form>
-        <!-- End  Login Form -->                    
+        <!-- End  Edit Form -->                    
       </div>      
     </div>
   </div>

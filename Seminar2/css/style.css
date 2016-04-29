@@ -8,18 +8,14 @@
 	padding:0px;
 }
 .navbar-default .navbar-nav li a{
-	color:red;
+	
 	padding:20px 30px;
 }
-.navbar-default .navbar-nav li a:hover{
-	color:blue;
+.navbar-default .navbar-nav li a:hover{	
 	background-color: #aaa;
 }
 .dropdown-menu{
 	padding:0px;
-}
-body{
-	
 }
 .no-padding{
 	padding-left:0px;
@@ -32,8 +28,8 @@ body{
     }
 }
 .margin{
-	margin-top:  15px;
-	margin-bottom: 15px;
+	margin-top:15px;
+	margin-bottom:15px;
 }
 .no-margin{
 	margin:0;
@@ -41,9 +37,6 @@ body{
 #mjestoPovratka{
 	display:none;
 }
-
-
-
 .dl-horizontal dt 
 {
     white-space: normal;
