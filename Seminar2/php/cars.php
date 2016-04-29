@@ -35,10 +35,10 @@
 			<!--Generiranje kroz php-->
 			<div class="col-sm-6  margin">
 				<div class="row">
-					<div class="col-sm-12 col-md-6">
+					<div class="col-xs-6 col-sm-12 col-md-6">
 						<img src="http://placehold.it/350x250" alt="" class="img-responsive">
 					</div>
-					<div class="col-sm-12 col-md-6">					
+					<div class="col-xs-6 col-sm-12 col-md-6">					
 							            <p><strong>Ime auta:</strong> <span>WW Up!</span></p>		            
 							            <p><strong>Tip auta:</strong><span>Mini</span></p>		            
 							            <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>		            
@@ -52,10 +52,10 @@
 
 			<div class="col-sm-6 margin">
 				<div class="row">
-					<div class="col-sm-12 col-md-6">
+					<div class="col-xs-6 col-sm-12 col-md-6">
 						<img src="http://placehold.it/350x250" alt="" class="img-responsive">
 					</div>
-					<div class="col-sm-12 col-md-6">					
+					<div class="col-xs-6 col-sm-12 col-md-6">					
 							            <p><strong>Ime auta:</strong> <span>WW Up!</span></p>		            
 							            <p><strong>Tip auta:</strong><span>Mini</span></p>		            
 							            <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>		            
@@ -69,10 +69,10 @@
 
 			<div class="col-sm-6  margin">
 				<div class="row">
-					<div class="col-sm-12 col-md-6 ">
+					<div class="col-xs-6 col-sm-12 col-md-6 ">
 						<img src="http://placehold.it/350x250" alt="" class="img-responsive">
 					</div>
-					<div class="col-sm-12 col-md-6">					
+					<div class="col-xs-6 col-sm-12 col-md-6">					
 							            <p><strong>Ime auta:</strong> <span>WW Up!</span></p>		            
 							            <p><strong>Tip auta:</strong><span>Mini</span></p>		            
 							            <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>		            
