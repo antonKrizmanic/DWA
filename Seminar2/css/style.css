@@ -1,6 +1,9 @@
 .navbar{
 	border:none;
 }
+.navbar-nav{
+	margin:0px;
+}
 .navbar-collapse{
 	padding:0px;
 }
@@ -40,13 +43,7 @@ body{
 }
 
 
-/*modal*/
-#login-modal .modal-dialog, #register-modal .modal-dialog {
-    width: 350px;
-}
-#edit-modal .modal-dialog{
-	width:350px;
-}
+
 .dl-horizontal dt 
 {
     white-space: normal;
