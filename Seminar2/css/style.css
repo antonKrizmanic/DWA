@@ -1,0 +1,81 @@
+.navbar{
+	border:none;
+}
+.navbar-collapse{
+	padding:0px;
+}
+.navbar-default .navbar-nav li a{
+	color:red;
+	padding:20px 30px;
+}
+.navbar-default .navbar-nav li a:hover{
+	color:blue;
+	background-color: #aaa;
+}
+.dropdown-menu{
+	padding:0px;
+}
+body{
+	
+}
+.no-padding{
+	padding-left:0px;
+	padding-right:10px;	
+}
+@media screen and (max-width: 991px) {
+    .no-padding-responsive {
+        padding-left: 0px;
+        padding-right: 10px;
+    }
+}
+.margin{
+	margin-top:  15px;
+	margin-bottom: 15px;
+}
+.no-margin{
+	margin:0;
+}
+#mjestoPovratka{
+	display:none;
+}
+
+
+/*modal*/
+#login-modal .modal-dialog, #register-modal .modal-dialog {
+    width: 350px;
+}
+#edit-modal .modal-dialog{
+	width:350px;
+}
+.dl-horizontal dt 
+{
+    white-space: normal;
+    width: 200px; 
+}
+dt, dd{
+	padding-bottom: 10px;	
+}
+.tab-pane{
+	padding-top:20px ;
+	padding-left: 15px;
+	padding-bottom: 20px;
+	padding-right:15px;
+}
+.forma{
+	margin-top: 40px;
+}
+footer{
+	background-color: #f8f8f8;
+	margin-top: 50px;
+	padding-top: 40px;
+	padding-bottom: 40px;	
+}
+footer i{
+	font-size: 32px;
+}
+footer  a{
+	color:black;		
+}
+footer  a:hover{
+	color:#555;	
+}
