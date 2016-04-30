@@ -19,7 +19,7 @@
 	<div class="container">
 	  <h3>Najam vozila</h3>
 	  <!-- Nav tabs -->
-	  <ul class="nav nav-tabs" >
+	  <ul class="nav nav-tabs" id="tabs" >
 	    <li class="active" id="_vrijeme_mjesto"><a href="#vrijeme_mjesto"  data-toggle="tab" >Vrijeme i mjesto</a></li>
 	    <li id="_vozilo"><a href="#vozilo"  data-toggle="tab" >Odabir vozila</a></li>
 	    <li id="_dodatne_opcije"><a href="#dodatne_opcije"  data-toggle="tab" >Dodatne opcije</a></li>
@@ -77,20 +77,20 @@
 			        <div class="form-group col-lg-4 col-sm-6">
 			          <label for="vrijeme_preuzimanja">Vrijeme preuzimanja</label><br>
 			          <div class="col-md-4 no-padding">
-			            <input type="time" name="vrijeme_preuzimanja" class="form-control" id="vrijeme_preuzimanja" onchange="updatePodaci();">
+			            <input type="time" name="vrijeme_preuzimanja" class="form-control" id="vrijeme_preuzimanja" onchange="updatePodaci();" value="15:00">
 			          </div>
 			        </div>
 			        <div class="form-group col-lg-4 col-sm-6">
 			          <label for="vrijeme_povrata">Vrijeme povrata</label><br>
 			          <div class="col-md-4 no-padding">
-			            <input type="time" name="vrijeme_povrata" class="form-control" id="vrijeme_povrata" onchange="updatePodaci();">
+			            <input type="time" name="vrijeme_povrata" class="form-control" id="vrijeme_povrata" onchange="updatePodaci();" value="15:00">
 			          </div>
 			        </div>
 			      </div>      
 			      <!--Pomicanje na sljedeci korak-->
 			      <div class="row"> 
 			        <div class="col-lg-4 col-sm-6">
-			          <a href="#vozilo" aria-controls="vozilo" data-toggle="tab" onclick="nextTab(this);" class="btn btn-default">Idi na sljedeci korak</a>
+			          <a href="#vozilo" aria-controls="vozilo" data-toggle="tab" onclick="dateValidation(this);"  class="btn btn-default">Idi na sljedeci korak</a>
 			        </div>
 			      </div>
 			  	</div>
@@ -124,7 +124,7 @@
 			        <div class="row">
 			          <div class="col-md-12">
 			           <div class="table-responsive">
-			             <table class="table table-hover">
+			             <table class="table table-hover" id="auti">
 			               <thead>
 			                <tr>
 			                  <th></th>              
@@ -136,26 +136,26 @@
 			               <tbody>             
 			                 <tr> 
 			                  <td><input type="radio" name="auto" value="1"></td>
-			                  <td>WW Up!</td>
-			                  <td>250</td>
+			                  <td class="auto-ime">WW Up!</td>
+			                  <td class="cijena-auto">250</td>
 			                  <td>30</td>
 			                 </tr>
 			                 <tr>
 			                  <td><input type="radio" name="auto" value="2"></td>
-			                  <td>WW Up!</td>
-			                  <td>250</td>
+			                  <td class="auto-ime">WW Up!</td>
+			                  <td class="cijena-auto">350</td>
 			                  <td>30</td>
 			                 </tr>
 			                 <tr>
 			                  <td><input type="radio" name="auto" value="3"></td>
-			                  <td>WW Up!</td>
-			                  <td>250</td>
+			                  <td class="auto-ime">WW Up!</td>
+			                  <td class="cijena-auto">450</td>
 			                  <td>30</td>
 			                 </tr>
 			                 <tr>
 			                  <td><input type="radio" name="auto" value="4"></td>
-			                  <td>WW Up!</td>
-			                  <td>250</td>
+			                  <td class="auto-ime">WW Up!</td>
+			                  <td class="cijena-auto">550</td>
 			                  <td>30</td>
 			                 </tr>             
 			               </tbody>
@@ -171,13 +171,13 @@
 			          <div class="col-sm-6 no-padding-responsive">
 			            <div class="well">
 			              <h3>Pocetak:</h3>
-			              <p class="podaci_preuzimanje">Zagreb,25.04.2016 16:00</p>
+			              <p class="podaci_preuzimanje"></p>
 			            </div>
 			          </div>
 			          <div class="col-sm-6 no-padding-responsive">
 			            <div class="well">
 			              <h3>Kraj:</h3>
-			              <p class="podaci_povrat">Zagreb,25.04.2016 16:00</p>
+			              <p class="podaci_povrat"></p>
 			            </div>
 			          </div>
 			        </div>
@@ -185,7 +185,7 @@
 			          <div class="col-sm-6 no-padding-responsive">
 			            <div class="well">
 			              <h3>Ukupna cijena:</h3> 
-			              <p>150 kn</p>
+			              <p class="cijena-ukupno"></p>
 			            </div>
 			          </div>
 			        </div>
@@ -211,7 +211,7 @@
 			        <div class="row">
 			          <div class="col-md-12">
 			           <div class="table-responsive">
-			             <table class="table table-hover">
+			             <table class="table table-hover" id="opcije">
 			               <thead>
 			                <tr>
 			                  <th></th>              
@@ -225,28 +225,28 @@
 			                 <tr> 
 			                  <td><input type="checkbox" name="auto" value="1"></td>
 			                  <td>WW Up!</td>
-			                  <td>250</td>
+			                  <td class="cijena-opacija">250</td>
 			                  <td>30</td>
 			                  <td><a href="#" class="test" data-toggle="tooltip" data-placement="top" title="Osiguranje kojim se ograničava odgovornost najmoprimca za štetu nastalu na vozilu/krađu vozila na iznos franšize (ovaj iznos ovisi od kategorije vozila)!">?</a></td>                
 			                 </tr>
 			                 <tr>
 			                  <td><input type="checkbox" name="auto" value="2"></td>
 			                  <td>WW Up!</td>
-			                  <td>250</td>
+			                  <td class="cijena-opacija">350</td>
 			                  <td>30</td>
 			                  <td><a href="#" class="test" data-toggle="tooltip" data-placement="top" title="Osiguranje kojim se ograničava odgovornost najmoprimca za štetu nastalu na vozilu/krađu vozila na iznos franšize (ovaj iznos ovisi od kategorije vozila)!">?</a></td>                
 			                 </tr>
 			                 <tr>
 			                  <td><input type="checkbox" name="auto" value="3"></td>
 			                  <td>WW Up!</td>
-			                  <td>250</td>
+			                  <td class="cijena-opacija">280</td>
 			                  <td>30</td>
 			                  <td><a href="#" class="test" data-toggle="tooltip" data-placement="top" title="Osiguranje kojim se ograničava odgovornost najmoprimca za štetu nastalu na vozilu/krađu vozila na iznos franšize (ovaj iznos ovisi od kategorije vozila)!">?</a></td>                
 			                 </tr>
 			                 <tr>
 			                  <td><input type="checkbox" name="auto" value="4"></td>
 			                  <td>WW Up!</td>
-			                  <td>250</td>
+			                  <td class="cijena-opacija">450</td>
 			                  <td>30</td>
 			                  <td><a href="#" class="test" data-toggle="tooltip" data-placement="top" title="Osiguranje kojim se ograničava odgovornost najmoprimca za štetu nastalu na vozilu/krađu vozila na iznos franšize (ovaj iznos ovisi od kategorije vozila)!">?</a></td>                
 			                 </tr>             
@@ -263,13 +263,13 @@
 			          <div class="col-sm-6 no-padding-responsive">
 			            <div class="well">
 			              <h3>Pocetak:</h3>
-			              <p class="podaci_preuzimanje">Zagreb,25.04.2016 16:00</p>
+			              <p class="podaci_preuzimanje"></p>
 			            </div>
 			          </div>
 			          <div class="col-sm-6 no-padding-responsive">
 			            <div class="well">
 			              <h3>Kraj:</h3>
-			              <p class="podaci_povrat">Zagreb,25.04.2016 16:00</p>
+			              <p class="podaci_povrat"></p>
 			            </div>
 			          </div>
 			        </div>
@@ -277,7 +277,7 @@
 			          <div class="col-sm-6 no-padding-responsive">
 			            <div class="well">
 			              <h3>Ukupna cijena:</h3> 
-			              <p>150 kn</p>
+			              <p class="cijena-ukupno"></p>
 			            </div>
 			          </div>
 			        </div>
@@ -317,23 +317,23 @@
 			            <dt>Adresa:</dt>
 			            <dd>Vrbik VII</dd>
 			            <dt>Mjesto preuzimanja: </dt>
-			            <dd>Rijeka</dd>
+			            <dd class="mjesto-preuzimanja">Rijeka</dd>
 			            <dt>Datum i vrijeme preuzimanja: </dt>
-			            <dd>25.4.2016 16:00</dd>            
+			            <dd class="datum-vrijeme-preuzimanja">25.4.2016 16:00</dd>            
 			            <dt>Mjesto vracanja: </dt>
-			            <dd>Zagreb</dd>
+			            <dd class="mjesto-povrata">Zagreb</dd>
 			            <dt>Datum i vrijeme vracanja: </dt>
-			            <dd>25.4.2016 16:00</dd>
+			            <dd class="datum-vrijeme-povrata">25.4.2016 16:00</dd>
 			            <dt>Automobil: </dt>
-			            <dd>Opel Corsa</dd>
+			            <dd class="automobil">Opel Corsa</dd>
 			            <dt>Cijena:</dt>
-			            <dd>459.45 kn</dd>
+			            <dd class="cijena-ukupno"></dd>
 			          </dl>
 			        </div>
 			      </div>
 			      <div class="row"> 
 			        <div class="col-md-4">
-			          <a href="#potvrda" aria-controls="potvrda" data-toggle="tab" onclick="nextTab(this);" class="btn btn-primary">Potvrdi</a>
+			          <a href="#potvrda" aria-controls="potvrda" data-toggle="tab"  class="btn btn-primary">Potvrdi</a>
 			        </div>
 			      </div>
 			      <!--Ovo je vidljivo nakon klika na Potvrdi-->
@@ -405,43 +405,113 @@
 
 
 <script>
-  function povratDrugoMjesto(checkbox)
-  {
-    if (checkbox.checked)
-    {
-        var sakrij=document.getElementById("mjestoPovratka");
-        sakrij.style.display="block";
-    }
-    else{
-      var sakrij=document.getElementById("mjestoPovratka");
-        sakrij.style.display="none"; 
-    }
-  }
-  function nextTab(ele){
-    var href=ele.getAttribute("href");
-    href=href.slice(1);
-    href="_"+href;    
-    var next=document.getElementById(href);
-    var tmp=next.previousElementSibling;
-    tmp.className="";
-    next.className +="active";        
-  } 
-  /*$("#preuzimanje").change(function(){
-    alert("doslo do promjene");
-  })*/
-  function updatePodaci(){
-    
-    var preu=$("#preuzimanje option:selected").text();
-    var povr=$("#povrat option:selected").text();
-    var datePreuz=$("#datum_preuzimanja").val();
-    var datePovr=$("#datum_povrata").val();
-    var timePreuz=$("#vrijeme_preuzimanja").val();
-    var timepovr=$("#vrijeme_povrata").val();
-    
-    $(".podaci_preuzimanje").html(preu +" "+ datePreuz+ " "+timePreuz);
-    $(".podaci_povrat").html(povr +" "+ datePovr+ " "+timepovr);
-  } 
-  $(document).ready(function(){
-    $('[data-toggle="tooltip"]').tooltip();   
-});
+  	var cijenaAuto=0;
+  	var cijenaOpcije=0;
+  	var brDana=0;
+  	  	
+  	$(document).ready(function() {	    
+	    $('[data-toggle="tooltip"]').tooltip();   
+	    $('#tabs li').not('.active').addClass('disabled');	
+	    $('#tabs li').not('.active').find('a').removeAttr("data-toggle");	
+	});
+	function povratDrugoMjesto(checkbox)
+	{
+		if (checkbox.checked)
+		{        
+		    $("#mjestoPovratka").show();        
+		}
+		else{     
+		  	$("#mjestoPovratka").hide();      	
+		}
+		updatePodaci();
+	}
+	function dateValidation(ele){
+		var now=new Date();
+		
+		var datePreuzimanje=new Date($("#datum_preuzimanja").val());  	
+		var datePovrat=new Date($("#datum_povrata").val());
+		
+		if(now>datePreuzimanje || datePovrat<datePreuzimanje || isNaN( datePreuzimanje.valueOf()) || isNaN(datePovrat.valueOf()) ){
+			$(ele).attr("href","#");
+			alert("Odabrali ste krive datume");
+		}
+		else{
+			$(ele).attr("href","#vozilo")
+			var diff = new Date(datePovrat - datePreuzimanje);			
+			brDana = diff/1000/60/60/24;
+			if(brDana==0){
+				brDana=1;
+			}
+			updateCijena();						
+			nextTab(ele);
+		}
+	}
+  
+	function nextTab(ele){    
+		var trenutna=$('#tabs li.active');
+		var sljedeca=trenutna.next('li');
+		trenutna.removeClass('active');
+		sljedeca.removeClass('disabled').addClass('active');    
+		sljedeca.find('a').attr("data-toggle","tab");   
+	}
+  
+	function updatePodaci(){
+
+		var preu=$("#preuzimanje option:selected").text();
+		var povr=$("#povrat option:selected").text();
+		var datePreuz=$("#datum_preuzimanja").val();
+		var datePovr=$("#datum_povrata").val();
+		var timePreuz=$("#vrijeme_preuzimanja").val();
+		var timepovr=$("#vrijeme_povrata").val();
+		var checkbox=$("#drugoMjesto").prop('checked');
+		if(checkbox==true){
+			$(".podaci_preuzimanje").html(preu +" "+ datePreuz+ " "+timePreuz);
+			$(".podaci_povrat").html(povr +" "+ datePovr+ " "+timepovr);
+
+			$(".mjesto-preuzimanja").html(preu);
+			$(".mjesto-povrata").html(povr);	
+		}
+		else{
+			$(".podaci_preuzimanje").html(preu +" "+ datePreuz+ " "+timePreuz);
+			$(".podaci_povrat").html(preu +" "+ datePovr+ " "+timepovr);
+
+			$(".mjesto-preuzimanja").html(preu);
+			$(".mjesto-povrata").html(preu);	
+		}
+		$(".datum-vrijeme-preuzimanja").html(datePreuz+ " "+timePreuz);
+		$(".datum-vrijeme-povrata").html(datePovr+ " "+timepovr);
+
+	}
+	function updateCijena(){
+		
+		var cijena=parseInt(cijenaAuto*brDana)+parseInt(cijenaOpcije);
+		var cijenaUkupno=Number(cijena);
+		$('.cijena-ukupno').html(cijena+" kn");
+	}
+	$('#auti tr').click(function() {
+		$('#auti').find('tr').css('background-color','#f5f5f5');
+		$(this).css('background-color','#aaa');
+    	$(this).find('td input:radio').prop('checked', true);
+    	var auto=$(this).find('.auto-ime').html()
+    	$('.automobil').html(auto);
+    	cijenaAuto=parseInt($(this).find('.cijena-auto').html());
+    	updateCijena();
+	})
+	$('#opcije tr').click(function(){
+		$('#opcije').find('tr').css('background-color','#f5f5f5');
+		$(this).css('background-color','#aaa');
+    	var oznaceno=$(this).find('td input:checkbox');
+    	if(oznaceno.prop('checked')==true){
+    		oznaceno.prop('checked', false);
+    		cijenaOpcije-=parseInt($(this).find('.cijena-opacija').html());
+    	}
+    	else{
+    		oznaceno.prop('checked', true);
+    		cijenaOpcije+=parseInt($(this).find('.cijena-opacija').html());
+    	}
+    	
+    	updateCijena();
+	})
+	
+  
 </script>
