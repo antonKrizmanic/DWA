@@ -7,12 +7,11 @@
 			<p>Subota—Nedjelja: 08:00—16:00</p>
     	</div>
     	<div class="col-sm-4 col-xs-6">
-    		<h3>Drustvene mreze</h3>
-    		<a href="https://www.facebook.com/" target="_blank"><i class="icon-facebook"></i></a>
-			<a href="https://twitter.com/" target="_blank"><i class="icon-twitter"></i></a>
-			<a href="https://www.youtube.com/" target="_blank"><i class="icon-youtube"></i></a>
-    	</div>
-    	<div class="col-sm-4"></div>
+    	   <h3>Drustvene mreze</h3>
+    	    <a href="https://www.facebook.com/" target="_blank"><i class="icon-facebook"></i></a>
+			    <a href="https://twitter.com/" target="_blank"><i class="icon-twitter"></i></a>
+			    <a href="https://www.youtube.com/" target="_blank"><i class="icon-youtube"></i></a>
+    	</div>    	
     </div>
   </div>
 </footer>

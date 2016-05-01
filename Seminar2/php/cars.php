@@ -3,10 +3,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Flota</title>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">  	
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  	<link rel="stylesheet" href="../css/icons/css/fontello.css"><!--ikone-->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="../css/icons/css/fontello.css"><!--ikone-->
+	<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -22,7 +23,7 @@
 				<a href="insert-car.php" class="btn btn-info margin">Dodaj auto</a>
 				<p>U ponudi nudimo sve vrste vozyila, od malih gradskih, luksuznih do vozila s teretnim prostorom.</p>
 				<div class="col-xs-6 no-padding">
-					<select name="auti_sort" id="auti_sort" class="form-control">
+					<select name="cars-sort" id="cars-sort" class="form-control">
 						<option value="1">Mini</option>
 						<option value="2">Obiteljski</option>
 						<option value="3">Luksuzni</option>
@@ -38,14 +39,14 @@
 					<div class="col-xs-6 col-sm-12 col-md-6">
 						<img src="http://placehold.it/350x250" alt="" class="img-responsive">
 					</div>
-					<div class="col-xs-6 col-sm-12 col-md-6">					
-							            <p><strong>Ime auta:</strong> <span>WW Up!</span></p>		            
-							            <p><strong>Tip auta:</strong><span>Mini</span></p>		            
-							            <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>		            
-							            <p><strong>Broj vrata:</strong> <span>3</span></p>		            
-							            <p><strong>Broj putnika:</strong> <span>4</span></p>
-							            <!--link samo ako je admin-->
-							            <a href="insert-car.php" class="btn btn-danger">Izmjeni auto</a>		            
+					<div class="col-xs-6 col-sm-12 col-md-6">
+	          <p><strong>Ime auta:</strong> <span>WW Up!</span></p>
+	          <p><strong>Tip auta:</strong><span>Mini</span></p>
+	          <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>
+	          <p><strong>Broj vrata:</strong> <span>3</span></p>
+	          <p><strong>Broj putnika:</strong> <span>4</span></p>
+	          <!--link samo ako je admin-->
+	          <a href="insert-car.php" class="btn btn-danger">Izmjeni auto</a>
 					</div>
 				</div>
 			</div>
@@ -55,14 +56,14 @@
 					<div class="col-xs-6 col-sm-12 col-md-6">
 						<img src="http://placehold.it/350x250" alt="" class="img-responsive">
 					</div>
-					<div class="col-xs-6 col-sm-12 col-md-6">					
-							            <p><strong>Ime auta:</strong> <span>WW Up!</span></p>		            
-							            <p><strong>Tip auta:</strong><span>Mini</span></p>		            
-							            <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>		            
-							            <p><strong>Broj vrata:</strong> <span>3</span></p>		            
-							            <p><strong>Broj putnika:</strong> <span>4</span></p>
-							            <!--link samo ako je admin-->
-							            <a href="insert-car.php" class="btn btn-danger">Izmjeni auto</a>		            
+					<div class="col-xs-6 col-sm-12 col-md-6">
+	          <p><strong>Ime auta:</strong> <span>WW Up!</span></p>
+	          <p><strong>Tip auta:</strong><span>Mini</span></p>
+	          <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>
+	          <p><strong>Broj vrata:</strong> <span>3</span></p>
+	          <p><strong>Broj putnika:</strong> <span>4</span></p>
+	          <!--link samo ako je admin-->
+	          <a href="insert-car.php" class="btn btn-danger">Izmjeni auto</a>
 					</div>
 				</div>
 			</div>
@@ -72,18 +73,17 @@
 					<div class="col-xs-6 col-sm-12 col-md-6 ">
 						<img src="http://placehold.it/350x250" alt="" class="img-responsive">
 					</div>
-					<div class="col-xs-6 col-sm-12 col-md-6">					
-							            <p><strong>Ime auta:</strong> <span>WW Up!</span></p>		            
-							            <p><strong>Tip auta:</strong><span>Mini</span></p>		            
-							            <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>		            
-							            <p><strong>Broj vrata:</strong> <span>3</span></p>		            
-							            <p><strong>Broj putnika:</strong> <span>4</span></p>
-							            <!--link samo ako je admin-->
-							            <a href="insert-car.php" class="btn btn-danger">Izmjeni auto</a>		            
+					<div class="col-xs-6 col-sm-12 col-md-6">
+	          <p><strong>Ime auta:</strong> <span>WW Up!</span></p>
+	          <p><strong>Tip auta:</strong><span>Mini</span></p>
+	          <p><strong>Tip mjenjaca:</strong> <span>Rucni</span></p>
+	          <p><strong>Broj vrata:</strong> <span>3</span></p>
+	          <p><strong>Broj putnika:</strong> <span>4</span></p>
+	          <!--link samo ako je admin-->
+	          <a href="insert-car.php" class="btn btn-danger">Izmjeni auto</a>
 					</div>
 				</div>
 			</div>
-
 		</div>
 	</div>
 	<?php

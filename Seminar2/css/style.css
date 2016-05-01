@@ -1,3 +1,7 @@
+body{
+	font-family: 'Noto Sans', sans-serif;
+}
+/*navigacija*/
 .navbar{
 	border:none;
 }
@@ -8,18 +12,23 @@
 	padding:0px;
 }
 .navbar-default .navbar-nav li a{
-	
+
 	padding:20px 30px;
 }
-.navbar-default .navbar-nav li a:hover{	
+.navbar-default .navbar-nav li a:hover{
 	background-color: #aaa;
 }
 .dropdown-menu{
 	padding:0px;
 }
+/*end navigacija*/
+/*sve stranice*/
 .no-padding{
 	padding-left:0px;
-	padding-right:10px;	
+	padding-right:10px;
+}
+.img-responsive{
+	margin-bottom: 20px;
 }
 @media screen and (max-width: 991px) {
     .no-padding-responsive {
@@ -34,38 +43,45 @@
 .no-margin{
 	margin:0;
 }
-#mjestoPovratka{
-	display:none;
-}
-.dl-horizontal dt 
-{
-    white-space: normal;
-    width: 200px; 
-}
-dt, dd{
-	padding-bottom: 10px;	
-}
+/*end sve stranice*/
+
+/*index.php*/
+/*za sve tabove*/
 .tab-pane{
 	padding-top:20px ;
 	padding-left: 15px;
 	padding-bottom: 20px;
 	padding-right:15px;
 }
-.forma{
-	margin-top: 40px;
+/*sakrivanje mjesta vracanja*/
+#office-in-div{
+	display:none;
 }
+/*prikaz podataka o rezervaciji na kraju*/
+dt, dd{
+	padding-bottom: 10px;
+}
+.dl-horizontal dt
+{
+    white-space: normal;
+    width: 200px;
+}
+/*end inex.php*/
+
+/*footer*/
 footer{
 	background-color: #f8f8f8;
 	margin-top: 50px;
 	padding-top: 40px;
-	padding-bottom: 40px;	
+	padding-bottom: 40px;
 }
 footer i{
 	font-size: 32px;
 }
 footer  a{
-	color:black;		
+	color:black;
 }
 footer  a:hover{
-	color:#555;	
+	color:#555;
 }
+/*end footer*/
