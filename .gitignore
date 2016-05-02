@@ -73,3 +73,10 @@ lab4/config.yaml
 lab4/.vagrant/machines/default/virtualbox/creator_uid
 lab4/.vagrant/machines/default/virtualbox/index_uuid
 lab4/Vagrantfile
+*.yaml
+lab5/.vagrant/machines/default/virtualbox/index_uuid
+lab5/.vagrant/machines/default/virtualbox/creator_uid
+lab5/.vagrant/machines/default/virtualbox/action_provision
+lab5/.vagrant/machines/default/virtualbox/action_set_name
+lab5/.vagrant/machines/default/virtualbox/id
+lab5/.vagrant/machines/default/virtualbox/synced_folders
