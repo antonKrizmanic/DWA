@@ -1,3 +1,21 @@
+<?php
+		session_start();
+		$username=$_GET['username'];
+		$password=$_GET['password'];
+		if(isset($_GET['username']) && isset($_GET['password']) ){
+			$_SESSION['username']=$_GET['username'];
+			$_SESSION['password']=$_GET['password'];
+		}
+		if($_SESSION['username'] !="korisnik" || $_SESSION['password'] !="korisnik"){
+			header('Location: login.html');
+		}
+		
+?>
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,11 +23,7 @@
 	<title>Fantastic beasts</title>
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/stil.css">
-	<?php
-		session_start();
-		$_SESSION["username"]="korisnik";
-		$_SESSION["password"]="korisnik";
-	?>
+	
 </head>
 <body>	
 		<div class="reklama container">
@@ -28,15 +42,10 @@
 					</div>
 					<div class="col-sm-2 col-sm-offset-4">
 						<?php								
-							if($_SESSION["username"]==$_GET["username"] && $_SESSION["password"]==$_GET["password"]){
-								echo "Korisnik:".$_GET["username"]."</br>";
-								echo "Lozinka:".$_GET["password"]."";
-							}
-							else{
-								header("Location: https://moj.tvz.hr/index.php?prikaz=nastsem1");
-							}
+							echo "Korisnik:".$_GET["username"]."</br>";
+							echo "Lozinka:".$_GET["password"]."";							
 						?>						
-						<a href="login.html" class="odjava">Odjava</a>
+						<a href="logout.php" class="odjava">Odjava</a>
 					</div>
 				</div>
 			</header>			
@@ -103,8 +112,7 @@
 				}
 			}
 			function zatvori(){
-				var div=document.querySelector(".reklama");
-				
+				var div=document.querySelector(".reklama");				
 				div.style.visibility="hidden";
 			}
 		</script>

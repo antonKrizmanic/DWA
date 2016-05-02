@@ -8,8 +8,8 @@
 	<?php 
 		include("connect.php");
 		session_start();
-		if(isset($_SESSION['userName'])){
-			
+		if($_SESSION['username'] !="korisnik" || $_SESSION['password'] !="korisnik"){
+			header('Location: login.html');
 		}
 	?>
 </head>
@@ -48,13 +48,13 @@
 					<select name="vrsta" id="" class="form-control">
 						<
 					<?php
-						$qurey1="SELECT vrstaProizvoda FROM proizvod";
+						$qurey1="SELECT id,vrstaProizvoda FROM proizvod";
 						if($result=mysqli_query($link,$qurey1))
 
 						
 						echo"<option value='0'></option>";
 						while($row=mysqli_fetch_row($result)){
-							echo"<option value='".$row[0]."'> ".$row[0]."</option>";
+							echo"<option value='".$row[0]."'> ".$row[1]."</option>";
 						}
 					?>
 					</select>
@@ -63,13 +63,13 @@
 					<label for="zivotinja">Vrsta zivotinje</label>
 					<select name="zivotinja" id="" class="form-control">
 					<?php
-						$qurey1="SELECT nazivZivotinje FROM zivotinje";
+						$qurey1="SELECT id,nazivZivotinje FROM zivotinje";
 						if($result=mysqli_query($link,$qurey1))
 					
 						
 						echo"<option value='0'></option>";
 						while($row=mysqli_fetch_row($result)){
-							echo"<option value='".$row[0]."'> ".$row[0]."</option>";
+							echo"<option value='".$row[0]."'> ".$row[1]."</option>";
 						}
 					?>
 					</select>
@@ -88,9 +88,9 @@
 
 	<?php
 		if(isset($_POST['posalji'])){
-			$naziv=$_POST['naziv'];
+			$naziv=$_POST['naziv'];			
 			
-			
+			/*tip proizvoda-hrana...*/
 			if(isset($_POST['vrsta']) && $_POST['vrsta']=='0'){				
 				echo"Molim odaberite vrstu proizvoda";
 			}
@@ -105,37 +105,8 @@
 			}
 			$opis=$_POST['opis'];
 			$cijena=$_POST['cijena'];
-
-			/* create a prepared statement */
-			$stmt = mysqli_stmt_init($link);
-			$proizvodQuery='SELECT id FROM proizvod WHERE vrstaProizvoda=?';
-			if (mysqli_stmt_prepare($stmt,$proizvodQuery)) {
-			    /* bind parameters for markers */
-			    mysqli_stmt_bind_param($stmt, "s", $vrsta);
-			    /* execute query */
-			    mysqli_stmt_execute($stmt);			    
-			    /* bind result variables */
-			    mysqli_stmt_bind_result($stmt, $idVrsta);
-			    /* fetch value */
-			    mysqli_stmt_fetch($stmt);
-			    /* close statement */
-			    mysqli_stmt_close($stmt);
-			}			
-			/* create a prepared statement */
-			$stmt = mysqli_stmt_init($link);
-			$zivotinjaQuery='SELECT id FROM zivotinje WHERE nazivZivotinje=?';
-			if (mysqli_stmt_prepare($stmt,$zivotinjaQuery)) {
-			    /* bind parameters for markers */
-			    mysqli_stmt_bind_param($stmt, "s", $zivotinja);
-			    /* execute query */
-			    mysqli_stmt_execute($stmt);
-			    /* bind result variables */
-			    mysqli_stmt_bind_result($stmt, $idZivotinja);
-			    /* fetch value */
-			    mysqli_stmt_fetch($stmt);
-			    /* close statement */
-			    mysqli_stmt_close($stmt);
-			}
+			
+			
 			
 			/* create a prepared statement */
 			$stmt = mysqli_stmt_init($link);
@@ -143,7 +114,7 @@
 			if (mysqli_stmt_prepare($stmt,$query )) {
 
 			    /* bind parameters for markers */
-			    mysqli_stmt_bind_param($stmt, "siisd", $naziv,$idZivotinja,$idVrsta,$opis,$cijena);			    
+			    mysqli_stmt_bind_param($stmt, "siisd", $naziv,$zivotinja,$vrsta,$opis,$cijena);			    
 			    
 			    /* execute query */
 			    if (!mysqli_stmt_execute($stmt)) {

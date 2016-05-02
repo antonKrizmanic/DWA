@@ -5,7 +5,8 @@
 	<title>Fantastic beasts</title>
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/stil.css">
-	<?php
+	<?php		
+		
 		session_start();
 		if($_SESSION['username'] !="korisnik" || $_SESSION['password'] !="korisnik"){
 			header('Location: login.html');
@@ -28,7 +29,7 @@
 					</div>
 					<div class="col-sm-2 col-sm-offset-4">
 											
-						<a href="logout.php" class="odjava">Odjava</a>
+						<a href="login.html" class="odjava">Odjava</a>
 					</div>
 				</div>
 			</header>			
@@ -36,22 +37,22 @@
 					<ul class="nav">
 						<li><a href="login.php">Zivotopis</a></li>
 						<li><a href="popisProizvoda.php">Popis proizvoda</a></li>
-						<li><a href="#">Popis proizvoda Idiorm</a></li>
+						<li><a href="popisProizvodaIdiorm.php">Popis proizvoda Idiorm</a></li>
 						<li><a href="unosForme.php">Unos proizvoda</a></li>
-						<li><a href="kosarica.php">Kosarica</a></li>
+						<li><a href="#">Kosarica</a></li>
 					</ul>
 				</nav>
 				<section class="col-sm-10 content">
 
-					<div class="form-inline">
-						<div class="form-group">
-							<label for="search">Trazeni pojam:</label>
-							<input type="text" id="search" name="search" placeholder="Upisi trazeni pojam" onkeyup="trazi()" class="form-control ">							
-						</div>						
-						<input type="submit" id="submit"  class="btn btn-default" value="Pretraži stranicu">
-						<a href="javascript:void()" onclick="deleteCookie();" class="btn btn-primary">Isprazni </a>
-					</div>
-					
+					<?php
+
+						if(!isset($_COOKIE["shop"])) {
+    						echo "Cookie named is not set!";
+						} else {						    
+						    echo "Value is: " . $_COOKIE['shop'];
+						    $token=substr($_COOKIE["shop"],1);
+						}
+					?>
 					<table class="table table-striped" id="tablica">
 						<thead>
 							<tr>
@@ -61,29 +62,39 @@
 								<th>Opis</th>
 								<th>Cijena</th>
 							</tr>
-						</thead>
+						</thead>				
 						<tbody>
-						<?php
+						
+						<?php	
+
 							$results2=ORM::for_table('proizvodi')->select_many(array('Naziv'=>'proizvodi.naziv','Vrsta'=>'proizvod.vrstaProizvoda','Zivotinja'=>'zivotinje.nazivZivotinje',
 								'Opis'=>'proizvodi.opisProizvoda','Cijena','id'=>'proizvodi.id'))->
 							join('proizvod',array('proizvodi.tipProizvoda','=','proizvod.id'))->							
 							join('zivotinje',array('proizvodi.tipZivotinje','=','zivotinje.id'))->
+							where_raw("proizvodi.id in($token)")->
 							order_by_asc('id')->
 							find_many();
-
+							
 							foreach($results2 as $result):
 								echo"<tr>
 										<td>$result->Naziv</td>
 										<td>$result->Vrsta</td>
 										<td>$result->Zivotinja</td>
 										<td style='width:200px'>$result->Opis</td>
-										<td>$result->Cijena</td>									
-										<td><input type=\"submit\" value=\"spremi\" onclick = \"setCookie('shop',getCookie('shop')+','+'$result->id', 1)\" class=\"btn btn-info\"></input></td>
+										<td>$result->Cijena</td>																			
 									</tr>";
 							endforeach;
+							
+
 						?>
-						</tbody>
-					</table>					
+										
+
+					
+
+
+					
+					</tbody>
+					</table>	
 				</section>
 			
 		</div>
@@ -94,36 +105,7 @@
 				</footer>		
 		</div>	
 		<script type="text/javascript">
-			function trazi(){
-				var unos=document.getElementById("search").value;
-				var trs = document.getElementsByTagName("tr");
-				
-				for(var i=1;i<trs.length;i++){
-					var c=trs[i].innerHTML.search(unos);
-					if(c==-1){
-						trs[i].style.display="none";	
-					}
-				}
-			}
-			function setCookie(cname, cvalue, exdays) {
-    			var d = new Date();
-    			d.setTime(d.getTime() + (exdays*24*60*60*1000));
-    			var expires = "expires="+d.toUTCString();
-    			document.cookie = cname + "=" + cvalue + "; " + expires;
-			} 
-			function getCookie(cname) {
-  			  	var name = cname + "=";
-    			var ca = document.cookie.split(';');
-			    for(var i=0; i<ca.length; i++) {
-        			var c = ca[i];
-        			while (c.charAt(0)==' ') c = c.substring(1);
-        			if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-    			}
-    			return "";
-			}
-			function deleteCookie(){
-				document.cookie = "shop=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
-			} 
+			
 		</script>
 </body>
 </html>
