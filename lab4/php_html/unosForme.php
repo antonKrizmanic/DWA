@@ -5,12 +5,16 @@
 	<title>Fantastic beasts</title>
 	<link rel="stylesheet" href="../css/bootstrap.css">
 	<link rel="stylesheet" href="../css/stil.css">
-	<?php 
-		include("connect.php");
+	<?php 		
 		session_start();
 		if($_SESSION['username'] !="korisnik" || $_SESSION['password'] !="korisnik"){
 			header('Location: login.html');
 		}
+		require_once 'idiorm.php';
+		ORM::configure('mysql:host=localhost;dbname=fantastic_beasts');
+		ORM::configure('username','root');
+		ORM::configure('password','root');		
+		ORM::configure('driver_options', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
 	?>
 </head>
 <body>
@@ -46,31 +50,27 @@
 				<div class="form-group">
 					<label for="vrsta">Vrsta proizvoda</label>
 					<select name="vrsta" id="" class="form-control">
-						<
+						
 					<?php
-						$qurey1="SELECT id,vrstaProizvoda FROM proizvod";
-						if($result=mysqli_query($link,$qurey1))
-
+						$results=ORM::for_table('proizvod')->find_many();
 						
 						echo"<option value='0'></option>";
-						while($row=mysqli_fetch_row($result)){
-							echo"<option value='".$row[0]."'> ".$row[1]."</option>";
-						}
+						foreach($results as $result){
+							echo"<option value='".$result->id."'> ".$result->vrstaProizvoda."</option>";
+						}						
 					?>
 					</select>
 				</div>
 				<div class="form-group">
 					<label for="zivotinja">Vrsta zivotinje</label>
 					<select name="zivotinja" id="" class="form-control">
-					<?php
-						$qurey1="SELECT id,nazivZivotinje FROM zivotinje";
-						if($result=mysqli_query($link,$qurey1))
-					
-						
+					<?php						
+						$results=ORM::for_table('zivotinje')->find_many();
+
 						echo"<option value='0'></option>";
-						while($row=mysqli_fetch_row($result)){
-							echo"<option value='".$row[0]."'> ".$row[1]."</option>";
-						}
+						foreach($results as $result){
+							echo"<option value='".$result->id."'> ".$result->nazivZivotinje."</option>";	
+						}						
 					?>
 					</select>
 				</div>				
@@ -87,6 +87,11 @@
 		</section>
 
 	<?php
+		$naziv=false;
+		$vrstaProizvoda=false;
+		$zivotinja=false;
+		$opis=false;
+		$cijena=false;
 		if(isset($_POST['posalji'])){
 			$naziv=$_POST['naziv'];			
 			
@@ -95,7 +100,7 @@
 				echo"Molim odaberite vrstu proizvoda";
 			}
 			else{
-				$vrsta=$_POST['vrsta'];	
+				$vrstaProizvoda=$_POST['vrsta'];	
 			}
 			if(isset($_POST['zivotinja']) && $_POST['zivotinja']=='0'){
 				echo"Molim odaberite zivotinju";
@@ -106,27 +111,13 @@
 			$opis=$_POST['opis'];
 			$cijena=$_POST['cijena'];
 			
-			
-			
-			/* create a prepared statement */
-			$stmt = mysqli_stmt_init($link);
-			$query='INSERT INTO proizvodi(naziv,tipZivotinje,tipProizvoda,opisProizvoda,cijena) VALUES (?,?,?,?,?)';
-			if (mysqli_stmt_prepare($stmt,$query )) {
-
-			    /* bind parameters for markers */
-			    mysqli_stmt_bind_param($stmt, "siisd", $naziv,$zivotinja,$vrsta,$opis,$cijena);			    
-			    
-			    /* execute query */
-			    if (!mysqli_stmt_execute($stmt)) {
-     			   $error = mysqli_stmt_error($stmt);
-     			   echo $error;
-    			}		    
-    			else{
-    				echo"Proizvod je uspjesno dodan";
-    			}
-			    /* close statement */
-			    mysqli_stmt_close($stmt);
-			}
+			$unos=ORM::for_table('proizvodi')->create();
+			$unos->naziv=$naziv;
+			$unos->tipZivotinje=$zivotinja;
+			$unos->tipProizvoda=$vrstaProizvoda;
+			$unos->opisProizvoda=$opis;
+			$unos->cijena=$cijena;
+			$unos->save();						
 
 		}
 	?>

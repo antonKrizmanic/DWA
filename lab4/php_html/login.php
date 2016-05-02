@@ -1,10 +1,8 @@
 <?php
-		session_start();
-		$username=$_GET['username'];
-		$password=$_GET['password'];
-		if(isset($_GET['username']) && isset($_GET['password']) ){
-			$_SESSION['username']=$_GET['username'];
-			$_SESSION['password']=$_GET['password'];
+		session_start();		
+		if(isset($_POST['username']) && isset($_POST['password']) ){
+			$_SESSION['username']=$_POST['username'];
+			$_SESSION['password']=$_POST['password'];
 		}
 		if($_SESSION['username'] !="korisnik" || $_SESSION['password'] !="korisnik"){
 			header('Location: login.html');
@@ -42,8 +40,8 @@
 					</div>
 					<div class="col-sm-2 col-sm-offset-4">
 						<?php								
-							echo "Korisnik:".$_GET["username"]."</br>";
-							echo "Lozinka:".$_GET["password"]."";							
+							echo "Korisnik:".$_SESSION["username"]."</br>";
+							echo "Lozinka:".$_SESSION["password"]."";							
 						?>						
 						<a href="logout.php" class="odjava">Odjava</a>
 					</div>
