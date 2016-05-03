@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Poslovnice</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-  <link rel="stylesheet" href="../css/icons/css/fontello.css"><!--ikone-->
-	<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  	<link rel="stylesheet" href="../css/icons/css/fontello.css"><!--ikone-->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -19,8 +20,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<h3>Popis svih lokacija:</h3>
-				<a href="insert-location.php" class="btn btn-info margin">Dodaj lokaciju</a>
+				<h3>Popis svih poslovnica:</h3>
+				<a href="insert-location.php" class="btn btn-info margin">Dodaj poslovnicu</a>
 				<div class="table-responsive">
 					<table class="table table-hover" id="table-locations">
 						<thead>

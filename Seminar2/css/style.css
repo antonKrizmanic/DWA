@@ -1,5 +1,9 @@
 body{
-	font-family: 'Noto Sans', sans-serif;
+	font-family: 'Open Sans', sans-serif;	
+	background-color: #F4F5F8;
+}
+h1,h2,h3,h4,h5,p,a{
+	font-weight: 300;
 }
 /*navigacija*/
 .navbar{
@@ -11,12 +15,27 @@ body{
 .navbar-collapse{
 	padding:0px;
 }
-.navbar-default .navbar-nav li a{
-
-	padding:20px 30px;
+.navbar-default{
+	background-color: #FFF;
+	padding:20px 0px;
 }
-.navbar-default .navbar-nav li a:hover{
-	background-color: #aaa;
+
+.navbar-default .navbar-nav li a, .dropdown-menu li a{	
+	font-size:16px;
+	font-weight: 600;
+	color:#757575;
+	margin:10px 15px;
+	padding:5px 10px;
+	-webkit-border-radius: 2px;
+	        border-radius: 2px;
+}
+.navbar-default .navbar-nav li a:hover, .dropdown-menu li a:hover{
+	color:#3ab4ed;
+	background-color: #FFF;
+}
+.navbar-default .navbar-nav li.active a,.navbar-default .navbar-nav li.active a:hover{
+	baccolor:#c8cace;
+	color:#fff;	
 }
 .dropdown-menu{
 	padding:0px;
@@ -47,16 +66,39 @@ body{
 
 /*index.php*/
 /*za sve tabove*/
+
+.nav-tabs li a{
+	color:#757575;
+}
+.nav-tabs li a:hover{
+	color:#3ab4ed;
+	background-color: transparent;	
+	border:1px solid transparent;
+}
+.nav-tabs li.active a{	
+	color:#c8cace;	
+	
+}
 .tab-pane{
 	padding-top:20px ;
 	padding-left: 15px;
 	padding-bottom: 20px;
 	padding-right:15px;
+	background-color: #FFF;
+	border: solid 1px #e6e7ea;
+	border-top: none;
+}
+.well{
+	-webkit-border-radius: 0px;
+	        border-radius: 0px;
+	background-color: #F4F5F8;
+	border: none;
 }
 /*sakrivanje mjesta vracanja*/
 #office-in-div{
 	display:none;
 }
+
 /*prikaz podataka o rezervaciji na kraju*/
 dt, dd{
 	padding-bottom: 10px;
@@ -66,11 +108,52 @@ dt, dd{
     white-space: normal;
     width: 200px;
 }
+
+#success{
+	font-weight: 600;
+}
+
+
+.carousel-inner > .item > img {
+   
+      margin:0 auto;
+  }
+
 /*end inex.php*/
+
+/*gumbi*/
+.btn-default, .btn-primary, .btn-info,.btn-danger{
+	border:none;
+	padding: 15px 20px;
+	color: #fff;
+	-webkit-border-radius: 0px;
+	        border-radius: 0px;
+}
+.btn-default{
+	background-color: #E93C40;	
+}
+.btn-default:hover{
+	background-color: #FF3C40;
+	color: #fff;
+}
+.btn-primary{
+	background-color: #E93C40;	
+}
+.btn-primary:hover{
+	background-color: #FF3C40;
+	color: #fff;	
+}
+.btn-info{
+	background-color: #219bd4
+}
+.btn-info:hover{
+	background-color: #3AB4ED;	
+}
+
 
 /*footer*/
 footer{
-	background-color: #f8f8f8;
+	background-color: #fff;
 	margin-top: 50px;
 	padding-top: 40px;
 	padding-bottom: 40px;

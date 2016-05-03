@@ -2,17 +2,10 @@
     $pageName = basename($_SERVER['PHP_SELF'],".php");
 ?>
 <header class="container">
-  <p class="text-right no-margin">
-    <!--ako korisnik nije prijavljen-->
-    <a href="#" data-toggle="modal" data-target="#login-modal">prijava</a>
-    <a href="#" data-toggle="modal" data-target="#register-modal">registracija</a>
-    <!--ako je korisnik prijavljen-->
-    <span>korisnicko ime</span>
-    <a href="#">odjava</a>
-  </p>
+
 </header>
 <nav class="navbar navbar-default">
-  <div class="container">    
+  <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         <span class="sr-only">Toggle navigation</span>
@@ -40,6 +33,11 @@
             <li><a href="#">Engleski</a></li>
           </ul>
         </li>
+        <!--ako korisnik nije prijavljen-->
+        <li><a href="#" data-toggle="modal" data-target="#login-modal">prijava</a></li>
+        <li><a href="#" data-toggle="modal" data-target="#register-modal">registracija</a></li>
+        <!--ako je korisnik prijavljen-->
+        <!--<li><a href="#">odjava</a></li>-->
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

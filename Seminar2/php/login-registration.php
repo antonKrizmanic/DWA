@@ -22,7 +22,8 @@
           </div>
           <div class="modal-footer">
             <div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+                <button type="reset" class="btn btn-info" data-dismiss="modal">Odustani</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
           </div>
         </form>
@@ -68,7 +69,8 @@
           </div>
           <div class="modal-footer">
             <div>
-                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+                <button type="reset" class="btn btn-info" data-dismiss="modal">Odustani</button>
+                <button type="submit" class="btn btn-primary">Register</button>
             </div>
           </div>
         </form>

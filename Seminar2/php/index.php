@@ -3,13 +3,18 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Document</title>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<title>Naslovnica</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../css/icons/css/fontello.css"><!--ikone-->
-	<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/icons/css/fontello.css"><!--ikone-->
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/resources/demos/style.css">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../css/style.css">
+  
 </head>
 <body>
 <?php
@@ -22,10 +27,9 @@
 	  <!-- Nav tabs -->
 	  <ul class="nav nav-tabs" id="tabs" >
 	    <li class="active"><a href="#time-place"  data-toggle="tab" >Vrijeme i mjesto</a></li>
-			<li><a href="#car" data-toggle="tab" aria-controls="car" >Odabir vozila</a></li>
+		<li><a href="#car" data-toggle="tab" aria-controls="car" >Odabir vozila</a></li>
 	    <li><a href="#extras"  data-toggle="tab" >Dodatne opcije</a></li>
-	    <li><a href="#client-data"  data-toggle="tab" >Osobni podaci</a></li>
-	    <li><a href="#confirmation"  data-toggle="tab" >Potvrda</a></li>
+	    <li><a href="#client-data"  data-toggle="tab" >Osobni podaci</a></li>	    
 	  </ul>
 
 	  <!-- Tab panes -->
@@ -61,14 +65,14 @@
 			      <div class="row">
 			        <div class="form-group col-lg-4 col-sm-6">
 			          <label for="date-out">Datum preuzimanja</label><br>
-			          <div class="col-md-8 no-padding">
-			            <input type="date" name="date-out" class="form-control" id="date-out" onchange="updateData();">
+			          <div class="col-md-8 no-padding">  							  
+			            <input type="text" name="date-out" class="form-control" id="date-out" onchange="updateData();">
 			          </div>
 			        </div>
 			        <div class="form-group ccol-lg-4 col-sm-6">
 			          <label for="date-in">Datum povrata</label><br>
 			          <div class="col-md-8 no-padding">
-			            <input type="date" name="date-in" class="form-control" id="date-in" onchange="updateData();">
+			            <input type="text" name="date-in" class="form-control" id="date-in" onchange="updateData();">
 			          </div>
 			        </div>
 			      </div>
@@ -313,41 +317,36 @@
 			        <div class="col-lg-5 col-sm-6">
 			          <dl class="dl-horizontal well">
 			            <dt>Ime i prezime: </dt>
-			            <dd>Marko Markovic</dd>
-			            <dt>Adresa:</dt>
-			            <dd>Vrbik VII</dd>
+			            <dd> Marko Markovic</dd>
+			            <dt>Adresa: </dt>
+			            <dd> Vrbik VII</dd>
 			            <dt>Mjesto preuzimanja: </dt>
-			            <dd class="office-out-class">Rijeka</dd>
+			            <dd class="office-out-class"></dd>
 			            <dt>Datum i vrijeme preuzimanja: </dt>
-			            <dd class="date-time-out">25.4.2016 16:00</dd>
+			            <dd class="date-time-out"></dd>
 			            <dt>Mjesto vracanja: </dt>
-			            <dd class="office-in-class">Zagreb</dd>
+			            <dd class="office-in-class"></dd>
 			            <dt>Datum i vrijeme vracanja: </dt>
 			            <dd class="date-time-in">25.4.2016 16:00</dd>
 			            <dt>Automobil: </dt>
-			            <dd class="chosen-car">Opel Corsa</dd>
-			            <dt>Cijena:</dt>
+			            <dd class="chosen-car"></dd>
+			            <dt>Cijena: </dt>
 			            <dd class="total-price"></dd>
 			          </dl>
 			        </div>
 			      </div>
 			      <div class="row">
 			        <div class="col-md-4">
-			          <a href="#confirmation" aria-controls="confirmation" data-toggle="tab"  class="btn btn-primary">Potvrdi</a>
+			          <a href="#confirmation" aria-controls="confirmation" data-toggle="tab"  class="btn btn-default">Potvrdi</a>
 			        </div>
 			      </div>
 			      <!--Ovo je vidljivo nakon klika na Potvrdi-->
 			      <div class="row">
 			        <div class="col-md-4">
-			          <p>Uspjesno ste rezervirali automobil. Hvala!</p>
+			          <p id="success">Uspjesno ste rezervirali automobil. Hvala!</p>
 			        </div>
 			      </div>
-			    </div>
-
-			    <!--prazan tab za sada-->
-			    <div role="tabpanel" class="tab-pane" id="confirmation">
-
-			    </div>
+			    </div>			    
 		  	</div>
 		</form><!--End form-->
 
@@ -359,27 +358,30 @@
 			    <ol class="carousel-indicators">
 			      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 			      <li data-target="#myCarousel" data-slide-to="1"></li>
-			      <li data-target="#myCarousel" data-slide-to="2"></li>
-			      <li data-target="#myCarousel" data-slide-to="3"></li>
+			      <li data-target="#myCarousel" data-slide-to="2"></li>			      
 			    </ol>
 			    <!-- Wrapper for slides -->
 			    <div class="carousel-inner" role="listbox">
 			      <div class="item active">
-			        <img src="http://placehold.it/550x250" class="img-responsive" >
+			        <img src="../img/vw-up.jpg" class="img-responsive" >
 			      </div>
 
 			      <div class="item">
-			        <img src="http://placehold.it/550x250" class="img-responsive" >
+			        <img src="../img/vw-polo.png" class="img-responsive" >
 			      </div>
 
 			      <div class="item">
-			        <img src="http://placehold.it/550x250" class="img-responsive" >
-			      </div>
-
-			      <div class="item">
-			        <img src="http://placehold.it/550x250" class="img-responsive" >
-			      </div>
+			        <img src="../img/vw-golf.png" class="img-responsive" >
+			      </div>			      
 			    </div>
+			    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				 </a>
 				</div>
 			</div>
 			<div class="col-md-6">
@@ -400,10 +402,12 @@
 	var days=0;
 
 	$(document).ready(function() {
-    $('[data-toggle="tooltip"]').tooltip();
-    $('#tabs li').not('.active').addClass('disabled');
-    $('#tabs li').not('.active').find('a').removeAttr("data-toggle");
-	});
+	    $('[data-toggle="tooltip"]').tooltip();
+	    $('#tabs li').not('.active').addClass('disabled');
+	    $('#tabs li').not('.active').find('a').removeAttr("data-toggle");
+    	$( "#date-out" ).datepicker();
+		$( "#date-in" ).datepicker();
+	});	 
 
 	function nextTab(){
 		var tmp=$('#tabs li.active');
@@ -465,17 +469,17 @@
 		if(checkbox==true){
 			$(".data-out").html(officeOut +" "+ dateOut+ " "+timeOut);
 			$(".data-in").html(officeIN +" "+ dateIn+ " "+timeIn);
-			$(".office-out-class").html(officeOut);
-			$(".office-in-class").html(officeIN);
+			$(".office-out-class").html(" "+officeOut);
+			$(".office-in-class").html(" "+officeIN);
 		}
 		else{
 			$(".data-out").html(officeOut +" "+ dateOut+ " "+timeOut);
 			$(".data-in").html(officeOut +" "+ dateIn+ " "+timeIn);
-			$(".office-out-class").html(officeOut);
-			$(".office-in-class").html(officeOut);
+			$(".office-out-class").html(" "+officeOut);
+			$(".office-in-class").html(" "+officeOut);
 		}
-		$(".date-time-out").html(dateOut+ " "+timeOut);
-		$(".date-time-in").html(dateIn+ " "+timeIn);
+		$(".date-time-out").html(" "+dateOut+ " "+timeOut);
+		$(".date-time-in").html(" "+dateIn+ " "+timeIn);
 		checkDates();
 		updatePrice();
 	}
@@ -486,25 +490,27 @@
 	}
 
 	$('#cars tr').click(function() {
-		$('#cars').find('tr').css('background-color','#f5f5f5');
-		$(this).css('background-color','#aaa');
+		$('#cars').find('tr').css('background-color','#F5F5F5');
+		$(this).css('background-color','#e7e7e7');
     	$(this).find('td input:hidden').prop('checked', true);
     	var car=$(this).find('.car-name').html()
     	$('.chosen-car').html(car);
     	carPrice=parseInt($(this).find('.car-price').html());
     	updatePrice();
 	})
-	
+
 	$('#extra-option tr').click(function(){
-		$('#extra-option').find('tr').css('background-color','#f5f5f5');
-		$(this).css('background-color','#aaa');
+		$('#extra-option').find('tr').css('background-color','#F5F5F5');
+		/*$(this).css('background-color','#e7e7e7');*/
     	var selected=$(this).find('td input:checkbox');
     	if(selected.prop('checked')==true){
     		selected.prop('checked', false);
+    		$(this).css('background-color','#F5F5F5');
     		extrasPrice-=parseInt($(this).find('.extras-price').html());
     	}
     	else{
     		selected.prop('checked', true);
+    		$(this).css('background-color','#e7e7e7');
     		extrasPrice+=parseInt($(this).find('.extras-price').html());
     	}
     	updatePrice();

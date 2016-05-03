@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Kontakt</title>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="../css/icons/css/fontello.css"><!--ikone-->
-	<link href='https://fonts.googleapis.com/css?family=Noto+Sans:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  	<link rel="stylesheet" href="../css/icons/css/fontello.css"><!--ikone-->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:600,300&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -23,42 +24,48 @@
 		</div>
 		<div class="row">
 			<!--Generiranje kroz php-->
-			<div class="col-md-6 col-sm-12 margin">
-				<div class="col-sm-6 no-padding">
-		            <h3>Poslovnica Zagreb</h3>
-		            <p><strong>Adresa:</strong><span>Vrbik VII</span></p>
-		            <p><strong>Tel:</strong><span>01-165-0211</span></p>
-		            <p><strong>Email:</strong><span>poslovnicazagreb@nasatrvtka.com</span></p>
-		            <p><strong>Radno vrijeme:</strong><span>08:00-16:00</span></p>
-				</div>
-				<div class="col-sm-6 no-padding">
-					<img src="http://placehold.it/350x250" alt="" class="img-responsive">
-				</div>
-			</div>
-
-			<div class="col-md-6 col-sm-12 margin">
-				<div class="col-sm-6 no-padding">
-		            <h3>Poslovnica Split</h3>
-		            <p><strong>Adresa:</strong><span>Vrbik VII</span></p>
-		            <p><strong>Tel:</strong><span>01-165-0211</span></p>
-		            <p><strong>Email:</strong><span>poslovnicazagreb@nasatrvtka.com</span></p>
-		            <p><strong>Radno vrijeme:</strong><span>08:00-16:00</span></p>
-				</div>
-				<div class="col-sm-6 no-padding">
-					<img src="http://placehold.it/350x250" alt="" class="img-responsive">
+			<div class="col-sm-6 margin">
+				<div class="row">
+					<div class="col-xs-6 col-sm-12 col-md-6">
+							            <h3>Poslovnica Zagreb</h3>
+							            <p><strong>Adresa:</strong><span>Vrbik VII</span></p>
+							            <p><strong>Tel:</strong><span>01-165-0211</span></p>
+							            <p><strong>Email:</strong><span>poslovnicazagreb@nasatrvtka.com</span></p>
+							            <p><strong>Radno vrijeme:</strong><span>08:00-16:00</span></p>
+					</div>
+					<div class="col-xs-6 col-sm-12 col-md-6">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d983.5046279976758!2d15.966303256200064!3d45.795812002602155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d68c95a9b349%3A0xf3ee56b52d4070ed!2sVRBIK!5e0!3m2!1shr!2shr!4v1462129309188" frameborder="0" class="img-responsive" style="border:0" allowfullscreen></iframe>
+					</div>
 				</div>
 			</div>
 
-			<div class="col-md-6 col-sm-12 margin">
-				<div class="col-sm-6 no-padding">
-		            <h3>Poslovnica Rijeka</h3>
-		            <p><strong>Adresa:</strong><span>Vrbik VII</span></p>
-		            <p><strong>Tel:</strong><span>01-165-0211</span></p>
-		            <p><strong>Email:</strong><span>poslovnicazagreb@nasatrvtka.com</span></p>
-		            <p><strong>Radno vrijeme:</strong><span>08:00-16:00</span></p>
+			<div class="col-sm-6 margin">
+				<div class="row">
+					<div class="col-xs-6 col-sm-12 col-md-6">
+							            <h3>Poslovnica Zagreb</h3>
+							            <p><strong>Adresa:</strong><span>Vrbik VII</span></p>
+							            <p><strong>Tel:</strong><span>01-165-0211</span></p>
+							            <p><strong>Email:</strong><span>poslovnicazagreb@nasatrvtka.com</span></p>
+							            <p><strong>Radno vrijeme:</strong><span>08:00-16:00</span></p>
+					</div>
+					<div class="col-xs-6 col-sm-12 col-md-6">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d983.5046279976758!2d15.966303256200064!3d45.795812002602155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d68c95a9b349%3A0xf3ee56b52d4070ed!2sVRBIK!5e0!3m2!1shr!2shr!4v1462129309188" frameborder="0" class="img-responsive" style="border:0" allowfullscreen></iframe>
+					</div>
 				</div>
-				<div class="col-sm-6 no-padding">
-					<img src="http://placehold.it/350x250" alt="" class="img-responsive">
+			</div>
+
+			<div class="col-sm-6 margin">
+				<div class="row">
+					<div class="col-xs-6 col-sm-12 col-md-6">
+							            <h3>Poslovnica Zagreb</h3>
+							            <p><strong>Adresa:</strong><span>Vrbik VII</span></p>
+							            <p><strong>Tel:</strong><span>01-165-0211</span></p>
+							            <p><strong>Email:</strong><span>poslovnicazagreb@nasatrvtka.com</span></p>
+							            <p><strong>Radno vrijeme:</strong><span>08:00-16:00</span></p>
+					</div>
+					<div class="col-xs-6 col-sm-12 col-md-6">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d983.5046279976758!2d15.966303256200064!3d45.795812002602155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d68c95a9b349%3A0xf3ee56b52d4070ed!2sVRBIK!5e0!3m2!1shr!2shr!4v1462129309188" frameborder="0" class="img-responsive" style="border:0" allowfullscreen></iframe>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -87,7 +94,7 @@
 
 					</div>
 					<div class="form-group">
-						<button type="submit" class="btn btn-default">Posalji poruku</button>
+						<button type="submit" class="btn btn-primary">Posalji poruku</button>
 					</div>
 				</form>
 			</div>
