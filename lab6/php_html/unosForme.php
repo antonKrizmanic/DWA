@@ -93,23 +93,25 @@
 		$opis=false;
 		$cijena=false;
 		if(isset($_POST['posalji'])){
-			$naziv=$_POST['naziv'];			
-			
+			$naziv=htmlspecialchars ($_POST['naziv']);
+			if($naziv!=$_POST['naziv']){
+				echo"Vise srece drugi put :)<br> Unesena vrijednost ce biti: $naziv";
+			}
 			/*tip proizvoda-hrana...*/
-			if(isset($_POST['vrsta']) && $_POST['vrsta']=='0'){				
-				echo"Molim odaberite vrstu proizvoda";
+			if(!isset($_POST['vrsta']) || $_POST['vrsta']=='0'){				
+				echo"<p>Molim odaberite vrstu proizvoda</p>";
 			}
 			else{
-				$vrstaProizvoda=$_POST['vrsta'];	
+				$vrstaProizvoda=htmlspecialchars ($_POST['vrsta']);
 			}
-			if(isset($_POST['zivotinja']) && $_POST['zivotinja']=='0'){
-				echo"Molim odaberite zivotinju";
+			if(!isset($_POST['zivotinja']) || $_POST['zivotinja']=='0'){
+				echo"<p>Molim odaberite zivotinju</p>";
 			}
 			else{				
-				$zivotinja=$_POST['zivotinja'];	
+				$zivotinja=htmlspecialchars ($_POST['zivotinja']);	
 			}
-			$opis=$_POST['opis'];
-			$cijena=$_POST['cijena'];
+			$opis=htmlspecialchars ($_POST['opis']);			
+			$cijena=htmlspecialchars ($_POST['cijena']);
 			
 			$unos=ORM::for_table('proizvodi')->create();
 			$unos->naziv=$naziv;

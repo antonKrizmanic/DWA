@@ -1,8 +1,8 @@
 <?php
 		session_start();		
 		if(isset($_POST['username']) && isset($_POST['password']) ){
-			$_SESSION['username']=$_POST['username'];
-			$_SESSION['password']=$_POST['password'];
+			$_SESSION['username']=htmlspecialchars ($_POST['username']);
+			$_SESSION['password']=htmlspecialchars ($_POST['password']);
 		}
 		if($_SESSION['username'] !="korisnik" || $_SESSION['password'] !="korisnik"){
 			header('Location: login.html');
