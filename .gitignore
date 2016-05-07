@@ -86,3 +86,4 @@ lab6/.vagrant/machines/default/virtualbox/action_provision
 lab6/.vagrant/machines/default/virtualbox/action_set_name
 lab6/.vagrant/machines/default/virtualbox/id
 lab6/.vagrant/machines/default/virtualbox/synced_folders
+lab6/vendor/tecnickcom/tcpdf/examples/

@@ -53,6 +53,7 @@
 						    $token=substr($_COOKIE["shop"],1);
 						}
 					?>
+					<a href="kosaricaPdf.php" class="btn btn-default">Napravi PDF</a>
 					<table class="table table-striped" id="tablica">
 						<thead>
 							<tr>
