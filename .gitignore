@@ -87,3 +87,11 @@ lab6/.vagrant/machines/default/virtualbox/action_set_name
 lab6/.vagrant/machines/default/virtualbox/id
 lab6/.vagrant/machines/default/virtualbox/synced_folders
 lab6/vendor/tecnickcom/tcpdf/examples/
+
+lab7/.vagrant/machines/default/virtualbox/index_uuid
+lab7/.vagrant/machines/default/virtualbox/creator_uid
+lab7/.vagrant/machines/default/virtualbox/action_provision
+lab7/.vagrant/machines/default/virtualbox/action_set_name
+lab7/.vagrant/machines/default/virtualbox/id
+lab7/.vagrant/machines/default/virtualbox/synced_folders
+lab7/vendor/tecnickcom/tcpdf/examples/

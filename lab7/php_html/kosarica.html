@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fantastic beasts</title>
+	<link rel="stylesheet" href="../css/bootstrap.css">
+	<link rel="stylesheet" href="../css/stil.css">
+	
+</head>
+<body>	
+		
+		<div class="container">
+			<header class="page-header">				
+				<div class="row">
+					<div class="col-sm-6">						
+						<img src="../img/fantBeastsLogo.png" alt="Fantastic beasts logo" class="img-responsive">
+					</div>
+					<div class="col-sm-2 col-sm-offset-4">
+											
+						<a href="login.html" class="odjava">Odjava</a>
+					</div>
+				</div>
+			</header>			
+				<nav class="col-sm-2">
+					<ul class="nav">
+						<li><a href="login.php">Zivotopis</a></li>
+						<li><a href="popisProizvoda.php">Popis proizvoda</a></li>
+						<li><a href="popisProizvodaIdiorm.php">Popis proizvoda Idiorm</a></li>
+						<li><a href="unosForme.php">Unos proizvoda</a></li>
+						<li><a href="#">Kosarica</a></li>
+					</ul>
+				</nav>
+				<section class="col-sm-10 content">
+
+					
+					<a href="kosaricaPdf.php" class="btn btn-default">Napravi PDF</a>
+					<table class="table table-striped" id="tablica">
+						<thead>
+							<tr>
+								<th>Naziv proizvoda</th>
+								<th>Vrsta proizvoda</th>
+								<th>Zivotinja</th>
+								<th>Opis</th>
+								<th>Cijena</th>
+							</tr>
+						</thead>				
+						<tbody>
+						{% for product in products %}
+				    		<tr>
+					    		<td>{{ product.Naziv }}</td>
+					    		<td>{{ product.Vrsta }}</td>
+					    		<td>{{ product.Zivotinja }}</td>
+					    		<td>{{ product.Opis }}</td>
+					    		<td>{{ product.Cijena }}</td>				    		
+				    		</tr>
+				    		{% else %}
+    							Kosarica je prazna
+						{% endfor %}					
+					</tbody>
+					</table>	
+				</section>
+			
+		</div>
+		
+		<div class="footer-wrapper">		
+				<footer class="container" >		
+						<p>Copyright Fantastic beasts, 2016</p>		
+				</footer>		
+		</div>	
+		<script type="text/javascript">
+			
+		</script>
+</body>
+</html>
