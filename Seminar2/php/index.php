@@ -25,13 +25,41 @@
 	<div class="container">
 	  <h3>Najam vozila</h3>
 	  <!-- Nav tabs -->
-	  <ul class="nav nav-tabs" id="tabs" >
+	  <!--<ul class="nav nav-tabs" id="tabs" >
 	    <li class="active"><a href="#time-place"  data-toggle="tab" >Vrijeme i mjesto</a></li>
 		<li><a href="#car" data-toggle="tab" aria-controls="car" >Odabir vozila</a></li>
 	    <li><a href="#extras"  data-toggle="tab" >Dodatne opcije</a></li>
 	    <li><a href="#client-data"  data-toggle="tab" >Osobni podaci</a></li>	    
-	  </ul>
-
+	  </ul>-->
+		<div class='breadcrumbs' id="tabs">		  
+		    <ul class='cf'>
+		      <li class='active'>
+		        <a href="#time-place" data-toggle="tab" >
+		          <span>1</span>
+		          <span>Vrijeme i mjesto</span>
+		        </a>
+		      </li>
+		      <li>
+		        <a href="#car" data-toggle="tab" >
+		          <span>2</span>
+		          <span>Odabir vozila</span>
+		        </a>
+		      </li>
+		      <li>
+		        <a href="#extras" data-toggle="tab" >
+		          <span>3</span>
+		          <span>Dodatne opcije</span>
+		        </a>
+		      </li>
+		      <li>
+		        <a href="#client-data" data-toggle="tab" >
+		          <span>4</span>
+		          <span>Osobni podaci</span>
+		        </a>
+		      </li>      
+		    </ul>
+		  
+		</div>
 	  <!-- Tab panes -->
 	  	<form action="">
 	  		<div class="tab-content">
