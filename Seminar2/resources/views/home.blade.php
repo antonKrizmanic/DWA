@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row" id="scope">
-        <h3>Najam vozila</h3>
+        <h3>{!! trans('home.rent_vehicle') !!}</h3>
         <!-- Nav tabs -->
         <!--<ul class="nav nav-tabs" id="tabs" >
           <li class="active"><a href="#time-place"  data-toggle="tab" >Vrijeme i mjesto</a></li>
@@ -16,25 +16,25 @@
                 <li class='active'>
                     <a href="#time-place" data-toggle="tab" ng-class="{disabled: (vars.car)}">
                         <span>1</span>
-                        <span>Vrijeme i mjesto</span>
+                        <span>{!! trans('home.time_place') !!}</span>
                     </a>
                 </li>
                 <li>
                     <a href="#car" data-toggle="tab" ng-class="{disabled: (vars.car)}">
                         <span>2</span>
-                        <span>Odabir vozila</span>
+                        <span>{!! trans('home.select_vehicle') !!}</span>
                     </a>
                 </li>
                 <li>
                     <a href="#extras" data-toggle="tab" ng-class="{disabled: (vars.extras)}">
                         <span>3</span>
-                        <span>Dodatne opcije</span>
+                        <span>{!! trans('home.extras_option') !!}</span>
                     </a>
                 </li>
                 <li>
                     <a href="#client-data" data-toggle="tab" ng-class="{disabled: (vars.extras)}">
                         <span>4</span>
-                        <span>Osobni podaci</span>
+                        <span>{!! trans('home.personal_data') !!}</span>
                     </a>
                 </li>
             </ul>
@@ -49,7 +49,7 @@
                     <!--Mjesto preuzimanja i vracanja-->
                     <div class="row">
                         <div class="form-group col-lg-4 col-sm-6">
-                            <label for="office-out">Mjesto preuzimanja</label><br>
+                            <label for="office-out">{!! trans('home.office_out') !!}</label><br>
 
                             <div class="form-group">
                                 <select  ng-change="setLocations();" ng-model="pickupLocation" ng-options="item.name as item.name for item in data.branches" name="pickup-location" id="office-out" class="form-control">
@@ -58,12 +58,12 @@
                             </div>
 
                             <div class="checkbox">
-                                <label><input type="checkbox" ng-model="vars.differentLocations" value="" name="office-in-diff" id="office-in-diff" ng-change="setLocations();">Vrati na drugo mjesto</label>
+                                <label><input type="checkbox" ng-model="vars.differentLocations" value="" name="office-in-diff" id="office-in-diff" ng-change="setLocations();">{!! trans('home.different_location') !!}</label>
                             </div>
                         </div>
                         <div id="office-in-div" ng-show="vars.differentLocations">
                             <div class="form-group col-lg-4 col-sm-6">
-                                <label for="office-in">Mjesto vracanja</label><br>
+                                <label for="office-in">{!! trans('home.office_in') !!}</label><br>
 
                                 <select  ng-change="setLocations();" ng-model="returnLocation" ng-options="item.name as item.name for item in data.branches" name="return-location" id="office-in" class="form-control">
                                     <option value="">-</option>
@@ -74,7 +74,7 @@
                     <!--Datum preuzimanja i vracanja-->
                     <div class="row">
                         <div class="form-group col-lg-4 col-sm-6">
-                            <label for="date-out">Datum preuzimanja</label><br>
+                            <label for="date-out">{!! trans('home.date_out') !!}</label><br>
                             <div class="col-md-8 no-padding">
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker1'>
@@ -90,7 +90,7 @@
                             </div>
                         </div>
                         <div class="form-group ccol-lg-4 col-sm-6">
-                            <label for="date-in">Datum povrata</label><br>
+                            <label for="date-in">{!! trans('home.date_in') !!}</label><br>
                             <div class="col-md-8 no-padding">
                                 <div class="form-group">
                                     <div class='input-group date' id='datetimepicker2'>
@@ -110,7 +110,7 @@
                     <div class="row">
                         <div class="form-inline">
                             <div class="form-group col-lg-4 col-sm-6">
-                                <label for="time-out">Vrijeme preuzimanja</label><br>                                
+                                <label for="time-out">{!! trans('home.time_out') !!}</label><br>                                
                                     <select name="pickupTimeH" id="time-out" class="form-control" ng-model="reservation.pickupTimeH" ng-change="timeDateChange();">
                                         <option value="00">00</option>
                                         <option value="01">01</option>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="form-inline">
                             <div class="form-group col-lg-4 col-sm-6">
-                                <label for="time-in">Vrijeme povrata</label><br>
+                                <label for="time-in">{!! trans('home.time_in') !!}</label><br>
                                 
                                     <select name="returnTimeH" id="time-in" class="form-control" ng-model="reservation.returnTimeH" ng-change="timeDateChange();">
                                         <option value="00">00</option>
@@ -188,7 +188,7 @@
                     <!--Pomicanje na sljedeci korak-->
                     <div class="row">
                         <div class="col-lg-4 col-sm-6 margin">
-                            <a ng-class="{disabled: (!vars.firstStepValid)}" href="#car" aria-controls="car" data-toggle="tab" class="btn btn-default">Korak 2</a>
+                            <a ng-class="{disabled: (!vars.firstStepValid)}" href="#car" aria-controls="car" data-toggle="tab" class="btn btn-default">{!! trans('home.next') !!}</a>
 
                             <p ng-cloak ng-hide="vars.isUserAuthenticated">In order to make a reservation, please Login or Register</p>
                         </div>
@@ -204,7 +204,7 @@
                         <!--Odabir vrste auta-->
                         <div class="col-md-5 no-padding">
                             <div class="form-group">
-                                <label for="car-type">Klasa vozila</label>
+                                <label for="car-type">{!! trans('home.class') !!}</label>
 
 
                                 <select  ng-change="" ng-model="vars.carClassSelect" ng-options="item.class as item.class for item in data.classes" name="car-type" id="car-type" class="form-control">
@@ -216,12 +216,12 @@
                         <!--odabir mjenjaca-->
                         <div class="col-md-5 col-md-offset-1 no-padding">
                             <div class="form-group">
-                                <label for="gear-type">Tip mjenjača</label>
+                                <label for="gear-type">{!! trans('home.gear') !!}</label>
 
                                 <select ng-model="vars.carGearboxSelect" ng-init="vars.carGearboxSelect = undefined" name="gear-type" id="gear-type" class="form-control">
                                     <option value="">-</option>
-                                    <option value="1">Automatski</option>
-                                    <option value="0" >Ručni</option>
+                                    <option value="1">{!! trans('home.auto') !!}</option>
+                                    <option value="0" >{!! trans('home.manual') !!}</option>
                                 </select>
 
                             </div>
@@ -234,9 +234,9 @@
                                     <table class="table" id="cars">
                                         <thead>
                                         <tr>
-                                            <th>Ime vozila</th>
-                                            <th>Cijena/dan(HRK)</th>
-                                            <th>Cijena/dan(€)</th>
+                                            <th>{!! trans('home.car') !!}</th>
+                                            <th>{!! trans('home.car_price_hrk') !!}</th>
+                                            <th>{!! trans('home.car_price_eur') !!}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -262,13 +262,13 @@
                         <div class="row">
                             <div class="col-sm-6 no-padding-responsive">
                                 <div class="well">
-                                    <h3>Pocetak:</h3>
+                                    <h3>{!! trans('home.start') !!}</h3>
                                     <p class="data-out">@{{ reservation.pickupDate + " @ " + reservation.pickupTimeH + ":" + reservation.pickupTimeM }}</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 no-padding-responsive">
                                 <div class="well">
-                                    <h3>Kraj:</h3>
+                                    <h3>{!! trans('home.end') !!}</h3>
                                     <p class="data-in">@{{ reservation.returnDate + " @ " + reservation.returnTimeH + ":" + reservation.returnTimeM }}</p>
                                 </div>
                             </div>
@@ -276,14 +276,14 @@
                         <div class="row">
                             <div class="col-sm-6 no-padding-responsive">
                                 <div class="well">
-                                    <h3>Ukupna cijena:</h3>
+                                    <h3>{!! trans('home.price_tot') !!}</h3>
                                     <p class="total-price">@{{ reservation.totalPrice }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row" ng-hide="reservation.selectedCarID > -1">
                             <div class="col-md-12 no-padding-responsive">
-                                <p>Please, select a car!</p>
+                                <p>{!! trans('home.select_car') !!}</p>
                             </div>
                         </div>
                         <div class="row" ng-show="reservation.selectedCarID > -1">
@@ -296,9 +296,9 @@
                     <!--Pomicanje na sljedeci korak-->
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="#time-place" aria-controls="car" data-toggle="tab" class="btn btn-default">Korak 2</a>
+                            <a href="#time-place" aria-controls="car" data-toggle="tab" class="btn btn-default">{!! trans('home.back') !!}</a>
 
-                            <a ng-class="{disabled: (!vars.secondStepValid)}" href="#extras" aria-controls="extras" data-toggle="tab" class="btn btn-default">Korak 3</a>
+                            <a ng-class="{disabled: (!vars.secondStepValid)}" href="#extras" aria-controls="extras" data-toggle="tab" class="btn btn-default">{!! trans('home.next') !!}</a>
                         </div>
                     </div>
                 </div><!--/panel-->
@@ -313,10 +313,10 @@
                                     <table class="table" id="extra-option">
                                         <thead>
                                         <tr>
-                                            <th>Naziv opcije</th>
-                                            <th>Cijena (kn)</th>
-                                            <th>Cijena (euri)</th>
-                                            <th>Opis</th>
+                                            <th>{!! trans('home.extra') !!}</th>
+                                            <th>{!! trans('home.extra_price_hrk') !!}</th>
+                                            <th>{!! trans('home.extra_price_eur') !!}</th>
+                                            <th>{!! trans('home.extra_des') !!}</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -343,13 +343,13 @@
                         <div class="row">
                             <div class="col-sm-6 no-padding-responsive">
                                 <div class="well">
-                                    <h3>Pocetak:</h3>
+                                    <h3>{!! trans('home.start') !!}</h3>
                                     <p class="data-out">@{{ reservation.pickupDate + " @ " + reservation.pickupTimeH + ":" + reservation.pickupTimeM }}</p>
                                 </div>
                             </div>
                             <div class="col-sm-6 no-padding-responsive">
                                 <div class="well">
-                                    <h3>Kraj:</h3>
+                                    <h3>{!! trans('home.end') !!}</h3>
                                     <p class="data-in">@{{ reservation.returnDate + " @ " + reservation.returnTimeH + ":" + reservation.returnTimeM }}</p>
                                 </div>
                             </div>
@@ -357,14 +357,14 @@
                         <div class="row">
                             <div class="col-sm-6 no-padding-responsive">
                                 <div class="well">
-                                    <h3>Ukupna cijena:</h3>
+                                    <h3>{!! trans('home.price_tot') !!}</h3>
                                     <p class="total-price">@{{ reservation.totalPrice }}</p>
                                 </div>
                             </div>
                         </div>
                         <div class="row" ng-hide="reservation.selectedCarID > -1">
                             <div class="col-md-12 no-padding-responsive">
-                                <p>Please, select a car!</p>
+                                <p>{!! trans('home.select_car') !!}</p>
                             </div>
                         </div>
                         <div class="row" ng-show="reservation.selectedCarID > -1">
@@ -376,9 +376,9 @@
                     <!--Pomicanje na sljedeci korak-->
                     <div class="row">
                         <div class="col-md-4">
-                            <a href="#car" aria-controls="car" data-toggle="tab" class="btn btn-default btn-back">Korak 2</a>
+                            <a href="#car" aria-controls="car" data-toggle="tab" class="btn btn-default btn-back">{!! trans('home.back') !!}</a>
 
-                            <a href="#client-data" aria-controls="client-data" data-toggle="tab"  class="btn btn-default btn-forward">Korak 4</a>
+                            <a href="#client-data" aria-controls="client-data" data-toggle="tab"  class="btn btn-default btn-forward">{!! trans('home.next') !!}</a>
                         </div>
                     </div>
                 </div>
@@ -389,7 +389,7 @@
                     <div class="row" ng-hide="vars.isUserAuthenticated">
                         <div class="col-lg-4 col-sm-6">
                             <div class="well">
-                                <h4>Kako bi potvrdili vasu rezervaciju molimo da se ulogirate sa svojim korisnickim podacima, ako ih nemate molimo da se registrirate</h4>
+                                <h4>{!! trans('home.message_login') !!}</h4>
                                 <a href="#" class="btn btn-info" data-toggle="modal" data-target="#login-modal">Prijava</a>
                                 <a href="#" class="btn btn-info" data-toggle="modal" data-target="#register-modal">Registracija</a>
                             </div>
@@ -400,49 +400,49 @@
                     <div class="row" ng-hide="vars.confirmedReservation">
                         <div class="col-lg-5 col-sm-6">
                             <dl class="dl-horizontal well">
-                                <dt>Ime i prezime: </dt>
+                                <dt>{!! trans('home.name') !!}: </dt>
                                 <dd>
                                     @{{ user.name }}
                                 </dd>
                                 <dt>
-                                    Kontakt:
+                                    {!! trans('home.contact') !!}:
                                 </dt>
                                 <dd>
                                     @{{ user.phone }}
                                 </dd>
                                 <dt>
-                                    Mjesto preuzimanja:
+                                    {!! trans('home.office_out') !!}:
                                 </dt>
                                 <dd class="office-out-class">
                                     &nbsp;
                                     @{{ reservation.pickupLocation }}
                                 </dd>
                                 <dt>
-                                    Datum i vrijeme preuzimanja:
+                                    {!! trans('home.date_time_out') !!}
                                 </dt>
                                 <dd class="date-time-out">
                                     @{{ reservation.pickupDate + " @ " + reservation.pickupTimeH + ":" + reservation.pickupTimeM }}
                                 </dd>
                                 <dt>
-                                    Mjesto vracanja:
+                                    {!! trans('home.office_in') !!}:
                                 </dt>
                                 <dd class="office-in-class">
                                     @{{ reservation.pickupLocation }}
                                 </dd>
                                 <dt>
-                                    Datum i vrijeme vracanja:
+                                    {!! trans('home.date_time_in') !!}:
                                 </dt>
                                 <dd class="date-time-in">
                                     @{{ reservation.returnDate + " @ " + reservation.returnTimeH + ":" + reservation.returnTimeM }}
                                 </dd>
                                 <dt>
-                                    Automobil:
+                                    {!! trans('home.car') !!}:
                                 </dt>
                                 <dd class="chosen-car">
                                     @{{ reservation.selectedCar.make + " " + reservation.selectedCar.model }}
                                 </dd>
                                 <dt>
-                                    Cijena:
+                                    {!! trans('home.price_tot') !!}:
                                 </dt>
                                 <dd class="total-price">
                                     @{{ reservation.totalPrice }}
@@ -452,15 +452,15 @@
                     </div>
                     <div class="row" ng-hide="vars.confirmedReservation">
                         <div class="col-md-4">
-                            <a href="#extras" aria-controls="car" data-toggle="tab" class="btn btn-default btn-back">Nazad</a>
+                            <a href="#extras" aria-controls="car" data-toggle="tab" class="btn btn-default btn-back">{!! trans('home.back') !!}</a>
 
-                            <a ng-click="saveReservation();" href="#confirmation" aria-controls="confirmation" data-toggle="tab"  class="btn btn-default">Potvrdi</a>
+                            <a ng-click="saveReservation();" href="#confirmation" aria-controls="confirmation" data-toggle="tab"  class="btn btn-default">{!! trans('home.conf') !!}</a>
                         </div>
                     </div>
                     <!--Ovo je vidljivo nakon klika na Potvrdi-->
                     <div class="row" ng-hide="!vars.confirmedReservation">
                         <div class="col-md-4">
-                            <p id="success">Uspjesno ste rezervirali automobil. Hvala!</p>
+                            <p id="success">{!! trans('home.success') !!}</p>
                         </div>
                     </div>
                 </div>
@@ -469,7 +469,7 @@
 
         <div class="row">
             <div class="col-md-6">
-                <h3>Galerija automobila</h3>
+                <h3>{!! trans('home.car_gallery') !!}</h3>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
                     <ol class="carousel-indicators">
@@ -502,9 +502,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <h3>Zasto bas mi?</h3>
+                <h3>{!! trans('home.why') !!}</h3>
                 <p>
-                    U svakom trenutnu na izbor ti nudimo široku ponudu vozila svih klasa, vrhunske kvalitete te visokih sigurnosnih i servisnih standarda po najpovoljnijim cijenama.
+                   {!! trans('home.we_offer') !!}
                 </p>
             </div>
         </div>

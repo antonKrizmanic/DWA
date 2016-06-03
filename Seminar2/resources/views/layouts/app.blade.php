@@ -50,42 +50,42 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ route('home') }}">Početna</a></li>
-                    <li><a href="{{ route('flota') }}">Flota</a></li>
+                    <li><a href="{{ route('home') }}">{!! trans('app.home') !!}</a></li>
+                    <li><a href="{{ route('flota') }}">{!! trans('app.fleet') !!}</a></li>
                     <!--link je vidljiv samo adminu-->
                     @if ( Auth::user()["isAdmin"] )
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" style="border-bottom: 1px dotted;">
-                                Data <span class="caret"></span>
+                                {!! trans('app.data') !!} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('getBranchesCitiesView') }}">Branches</a></li>
-                                <li><a href="{{ route('getCarsView') }}">Cars</a></li>
-                                <li><a href="{{ route('getClassesView') }}">Classes</a></li>
-                                <li><a href="{{ route('getExtrasView') }}">Extras</a></li>
-                                <li><a href="{{ route('getFuelsView') }}">Fuels</a></li>
-                                <li><a href="{{ route('getMakesModelsView') }}">Makes & Models</a></li>
+                                <li><a href="{{ route('getBranchesCitiesView') }}">{!! trans('app.branches') !!}</a></li>
+                                <li><a href="{{ route('getCarsView') }}">{!! trans('app.cars') !!}</a></li>
+                                <li><a href="{{ route('getClassesView') }}">{!! trans('app.classes') !!}</a></li>
+                                <li><a href="{{ route('getExtrasView') }}">{!! trans('app.extras') !!}</a></li>
+                                <li><a href="{{ route('getFuelsView') }}">{!! trans('app.fuels') !!}</a></li>
+                                <li><a href="{{ route('getMakesModelsView') }}">{!! trans('app.makes_models') !!}</a></li>
                             </ul>
                         </li>
-                        <li><a href="{{ route('getReservationsView') }}" style="border-bottom: 1px dotted;">Reservations</a></li>
+                        <li><a href="{{ route('getReservationsView') }}" style="border-bottom: 1px dotted;">{!! trans('app.reservations') !!}</a></li>
                     @endif
 
 
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Jezik <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{!! trans('app.language') !!} <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">Hrvatski</a></li>
-                            <li><a href="#">Engleski</a></li>
+                            <li><a href="/settings/lang/hr">{!! trans('app.croatian') !!}</a></li>
+                            <li><a href="/settings/lang/en">{!! trans('app.english') !!}</a></li>
                         </ul>
                     </li>
 
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}">{!! trans('app.login') !!}</a></li>
+                        <li><a href="{{ url('/register') }}">{!! trans('app.registration') !!}</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -93,8 +93,8 @@
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('getUserReservationsView') }}">My Reservations</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                                <li><a href="{{ route('getUserReservationsView') }}">{!! trans('app.my_reservations') !!}</a></li>
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>{!! trans('app.logout') !!}</a></li>
                             </ul>
                         </li>
                     @endif
@@ -194,12 +194,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-4 col-xs-6">
-                    <h3>Radno vrijeme</h3>
-                    <p>Ponedjeljak—Petak: 07:00—19:00</p>
-                    <p>Subota—Nedjelja: 08:00—16:00</p>
+                    <h3>{!! trans('app.work_time') !!}</h3>
+                    <p>{!! trans('app.week') !!}</p>
+                    <p>{!! trans('app.weekend') !!}</p>
                 </div>
                 <div class="col-sm-4 col-xs-6">
-                    <h3>Drustvene mreze</h3>
+                    <h3>{!! trans('app.social') !!}</h3>
                     <a href="https://www.facebook.com/" target="_blank"><i class="icon-facebook"></i></a>
                     <a href="https://twitter.com/" target="_blank"><i class="icon-twitter"></i></a>
                     <a href="https://www.youtube.com/" target="_blank"><i class="icon-youtube"></i></a>

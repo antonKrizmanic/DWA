@@ -70,6 +70,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
             'uses' => 'ApiController@carReturned'
         ]);
 
+
     });
 });
 
@@ -90,6 +91,7 @@ Route::group(['middleware' => 'auth'], function () {
         'as' => 'getUserReservationsView',
         'uses' => 'HomeController@getUserReservationsView'
     ]);
+     
 
 });
 
@@ -105,6 +107,10 @@ Route::get('/flota', [
 
 Route::get('/home', 'HomeController@index');
 
+Route::get('/settings/lang/{id}', [
+        'as' => 'changeLanguage',
+        'uses' => 'HomeController@changeLanguage'
+    ]);
 
 Route::get('/api/authenticated', [
     'as' => 'checkIfUserIsAuthenticated',
@@ -200,5 +206,6 @@ Route::post('/api/cars/add', [
     'as' => 'addCar',
     'uses' => 'ApiController@addCar'
 ]);
+
 
 Route::auth();

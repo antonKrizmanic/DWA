@@ -11,13 +11,13 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr >
-                                <th>Car</th>
-                                <th>Pickup Location</th>
-                                <th>Pickup Time</th>
-                                <th>Return Location</th>
-                                <th>Return Time</th>
-                                <th>Price</th>
-                                <th>Status</th>
+                                <th>{!! trans('reservations.car') !!}</th>
+                                <th>{!! trans('reservations.office_out') !!}</th>
+                                <th>{!! trans('reservations.time_out') !!}</th>
+                                <th>{!! trans('reservations.office_in') !!}</th>
+                                <th>{!! trans('reservations.time_in') !!}</th>
+                                <th>{!! trans('reservations.price') !!}</th>
+                                <th>{!! trans('reservations.status') !!}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -29,10 +29,10 @@
                                 <td>@{{ r.returnDate }}</td>
                                 <td>@{{ r.price }}</td>
                                 <td>
-                                    <span ng-show="r.isPaid == undefined && r.isPending == undefined && r.isCompleted == undefined">Pending</span>
-                                    <span ng-show="r.isPaid == undefined && r.isPending == 1 && r.isCompleted == undefined">Your order shall be delivered</span>
-                                    <span ng-show="r.isPaid == 1 && r.isPending == 1 && r.isCompleted == undefined">Order delivered</span>
-                                    <span ng-show="r.isPaid == 1 && r.isPending == 1 && r.isCompleted == 1">Car returned. Order completed.</span>
+                                    <span ng-show="r.isPaid == undefined && r.isPending == undefined && r.isCompleted == undefined">{!! trans('reservations.pending') !!}</span>
+                                    <span ng-show="r.isPaid == undefined && r.isPending == 1 && r.isCompleted == undefined">{!! trans('reservations.confirmed') !!}</span>
+                                    <span ng-show="r.isPaid == 1 && r.isPending == 1 && r.isCompleted == undefined">{!! trans('reservations.delivered') !!}</span>
+                                    <span ng-show="r.isPaid == 1 && r.isPending == 1 && r.isCompleted == 1">{!! trans('reservations.returned') !!}</span>
                                 </td>
                             </tr>
                             </tbody>
