@@ -1,0 +1,45 @@
+VAŽNO VAŽNO VAŽNO
+
+Dani programski kod neće raditi bez instalacije dodatnih biblioteka. 
+Biblioteke se instaliraju koristeći composer sustav (http://getcomposer.org)
+
+VAŽNO VAŽNO VAŽNO
+
+Framework + template + ORM
+
+U ovom primjeru su korišteni slijedeći elementi:
+* framework - Silex
+* template sustav - Twig
+* ORM (Object relational mapping) - Idiorm
+
+dodatno:
+* Twitter bootstrap za lakšu izradu stranica
+
+Važne datoteke i direktoriji:
+* .htaccess - potrebna zbog URL rewritinga
+* composer.json - definirane su sve potrebne klase kako bi primjer radio
+* index.php  - osnovni controller za cijelu stranicu, baziran na Silex frameworku
+* views/ - sve stranice opisane u Twig template formatu 
+* logic/ - sve PHP skripte povezane s nužnom logikom potrebnom da stranice funkcioniraju
+
+
+
+Kako bi sve funkcioniralo, nužno je:
+1. kopirati direktorij sa svim datotekama u Vagrant direktorij (npr. u novostvoreni direktorij lab8)
+2. promjeniti config.yaml u Vagrant direktoriju, i postaviti "nginx false" (ovime će se pokrenuti apache za koji imate gotov URL rewriting)
+3. pokrenuti Vagrant ("vagrant up")
+4. pokrenuti "vagrant provision", kako bi bili sigurni da je pokrenut apache
+5. provjeriti ( phpinfo() funkcijom ) da je stvarno pokrenut Apache server, a ne nginx
+6. spojiti se SSH-om na vagrant server (server localhost, port 2222, username i password vagrant)
+7. otići u direktorij koji ste stvorili (nalazi se negdje unutar /var/www/html/ direktorija, stoga npr. terminal:"cd /var/www/html/lab8"
+8. promjeniti htaccess datoteku u .htaccess - s točkom ispred (terminal:"mv htaccess .htaccess")
+9. pokrenuti iz direktorija naredbu terminal:"composer install" za instalaciju svih potrebnih paketa. Pogledati http://getcomposer.org
+10. treba importirati podatke u MySQL bazu (phpmyadmin, adminer, ili spajanjem kako je objašnjeno na prijašnjim vježbama), 
+11. podesiti datoteku logic/idiormUse.php (treba postaviti ime baze i ako treba korisnika i lozinku)
+12. uključiti browser i uputiti se na stranicu (http://localhost:8000/lab8/ )
+    Username / password : stipe / 123
+
+
+Napomena: "terminal:" znači kako se mora napraviti u ssh spoju prema serveru. Ako nije drugačije označeno, izmjene se mogu napraviti i u
+osnovnom operacijskom sustavu.
+

@@ -1,0 +1,40 @@
+{% extends "fantasticBeastsBasic.twig" %}
+{% block content %}
+
+			<form action="#" method="post" class="form col-sm-4">
+				<div class="form-group">
+					<label for="naziv">Ime proizvoda:</label>
+					<input type="text" name="naziv" class="form-control">
+				</div>
+				
+				<div class="form-group">
+					<label for="vrsta">Vrsta proizvoda</label>
+					<select name="vrsta" id="" class="form-control">
+					<option value='0'></option>
+					{% for proizvod in proizvodi %}				
+						<option value='{{proizvod.id}}'> {{proizvod.vrstaProizvoda}}</option>						
+					{% endfor %}
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="zivotinja">Vrsta zivotinje</label>
+					<select name="zivotinja" id="" class="form-control">
+					<option value='0'></option>
+					{% for zivotinja in zivotinje %}				
+						<option value='{{zivotinja.id}}'> {{zivotinja.nazivZivotinje}}</option>						
+					{% endfor %}
+					</select>
+				</div>				
+				<div class="form-group">
+					<label for="opis">Opis proizvoda</label>
+					<input type="text" name="opis" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="cijena">Cijena proizvoda</label>
+					<input type="text" name="cijena" class="form-control">
+				</div>				
+				<input type="submit" value="Pošalji" name="posalji" class="btn btn-default">				
+			</form>
+
+{% endblock %}
+	

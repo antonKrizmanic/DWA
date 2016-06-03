@@ -1,0 +1,58 @@
+{% extends "fantasticBeastsBasic.twig" %}
+
+{% block content %}
+	<div class="reklama container">
+		<p>Ovo je reklama</p>
+		<p id="zat" >Zatvori reklamu</p>
+	</div>
+
+	<article class="col-sm-12">						
+		<h2 id="osobni" >Osobni podaci:</h2>
+		<div id="osobniPodaci">
+			<p>Ime i prezime: Anton Krizmanić</p>
+			<p>Datum rođenja:08.10.1994</p>
+			<p>Mjesto rođenja:Rijeka</p>
+		</div>
+	</article>
+	<article class="col-sm-12">						
+		<h2 id="skolovanje" >Podaci o školovanju:</h2>
+		<div id="skolovanjePodaci">
+			<p>Osnovna škole: Osnovna škola Marije i Line Umag, Umag</p>
+			<p>Srednja škola: Gospodarska škola Buje, Buje</p>
+			<p>Fakultet: Tehničko veleučilište Zagreb, Zagreb</p>
+		</div>
+
+	</article>
+	<article class="col-sm-12">						
+		<h2 id="rad" >Podaci o radnom iskustvu</h2>
+		<div id="radPodaci">
+			<p>Prometna jedinica mladeži, Umag 2010 godine</p>
+			<p>Vozač eko vozila u Istraturistu 3 sezone</p>
+		</div>
+
+	</article>
+	<article class="col-sm-12">						
+		<h2 id="vjestine" >Znanja i vještine</h2>
+		<div id="vjestinePodaci">
+			<p>C,C++,C#,HTML,CSS,Javascript,PHP,ASP.NET</p>
+		</div>
+	</article>			
+
+<script type="text/javascript">
+	
+	$('h2').click(function(element){
+		var id=element.target.id+"Podaci";				
+		var div=$("#"+id);
+		if(div.css("display")=="block"){
+			div.css("display","none");			
+		}
+		else{
+			div.css("display","block");				
+		}		
+	})
+	$("#zat").click(function(){
+		var div=$(".reklama");				
+		div.css("visibility","hidden");
+	})
+</script>
+{% endblock %}
