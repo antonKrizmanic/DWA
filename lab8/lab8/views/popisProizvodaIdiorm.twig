@@ -29,52 +29,33 @@
 <script type="text/javascript">
 	
 	$(document).ready(function(){
-      var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (xhttp.readyState == 4 && xhttp.status == 200) {
-	      var proizvodi = JSON.parse(xhttp.responseText);
-	      for(i=0;i<proizvodi.length;i++){
-	      	document.getElementById("tbody").innerHTML += "<tr><td>"+proizvodi[i].Naziv+"</td><td>"	+proizvodi[i].Vrsta+"</td><td>"	+proizvodi[i].Zivotinja+"</td><td>"	+proizvodi[i].Opis+"</td><td>"+
-					proizvodi[i].Cijena+"</td><td><input type='submit' value='spremi' class='btn btn-info' onclick='setCookie(\"shop\",getCookie(\"shop\")+\",\"+\""+proizvodi[i].id+"\", 1)'></input></td></tr>";
-	      }
-	    }
-	  };
-	  xhttp.open("GET", "logic/popisProizvoda.php", true);
-	  xhttp.send();
-    });
-
-
-
-
-	$("#search").keyup(function(){
-		/*javascript*/
-		/*var unos=document.getElementById("search").value;
-		var trs = document.getElementsByTagName("tr");*/
-		/*jquery*/
-		/*var unos=$("#search").val();
-		var trs=$("tr");
-		for(var i=1;i<trs.length;i++){
-			var c=trs[i].innerHTML.search(unos);
-			if(c==-1){
-				trs[i].style.display="none";
-			}
-		}*/
-
-			var unos=$("#search").val();
-			var xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = function() {
-				if (xhttp.readyState == 4 && xhttp.status == 200) {
-					var proizvodi = JSON.parse(xhttp.responseText);
-					$("tbody").children().remove();
-					for(i=0;i<proizvodi.length;i++){
-						document.getElementById("tbody").innerHTML += "<tr><td>"+proizvodi[i].Naziv+"</td><td>"	+proizvodi[i].Vrsta+"</td><td>"	+proizvodi[i].Zivotinja+"</td><td>"	+proizvodi[i].Opis+"</td><td>"+
+      	$.ajax({
+	  		type: 'GET',
+	  		url: 'logic/popisProizvoda.php?function=1',
+	  		success: function (data) {
+	     		var proizvodi=jQuery.parseJSON(data);     		
+	     		for(i=0;i<proizvodi.length;i++){
+		      	document.getElementById("tbody").innerHTML += "<tr><td>"+proizvodi[i].Naziv+"</td><td>"	+proizvodi[i].Vrsta+"</td><td>"	+proizvodi[i].Zivotinja+"</td><td>"	+proizvodi[i].Opis+"</td><td>"+
 						proizvodi[i].Cijena+"</td><td><input type='submit' value='spremi' class='btn btn-info' onclick='setCookie(\"shop\",getCookie(\"shop\")+\",\"+\""+proizvodi[i].id+"\", 1)'></input></td></tr>";
-					}
-				}
-			};
-		xhttp.open("GET", "logic/popisProizvoda.php?var="+unos+"", true);
-		xhttp.send();
-
+		      }	
+	  		}
+		});     
+    });
+    
+	$("#search").keyup(function(){		
+		var unos=$("#search").val();
+		$.ajax({
+	  		type: "GET",
+	  		url: "logic/popisProizvoda.php?function=2&var="+unos+"",
+	  		success: function (data) {	     		
+	     		$('tbody').children().remove();
+	     		var proizvodi=jQuery.parseJSON(data);     		
+	     		for(i=0;i<proizvodi.length;i++){
+		      	document.getElementById("tbody").innerHTML += "<tr><td>"+proizvodi[i].Naziv+"</td><td>"	+proizvodi[i].Vrsta+"</td><td>"	+proizvodi[i].Zivotinja+"</td><td>"	+proizvodi[i].Opis+"</td><td>"+
+						proizvodi[i].Cijena+"</td><td><input type='submit' value='spremi' class='btn btn-info' onclick='setCookie(\"shop\",getCookie(\"shop\")+\",\"+\""+proizvodi[i].id+"\", 1)'></input></td></tr>";
+		      }	
+	  		}
+		});			
 	})
 
 	function setCookie(cname, cvalue, exdays) {
