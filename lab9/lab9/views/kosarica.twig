@@ -1,0 +1,33 @@
+{% extends "fantasticBeastsBasic.twig" %}
+
+{% block content %}
+	<a href="kosaricaPdf.php" class="btn btn-default">Napravi PDF</a>
+	<table class="table table-striped" id="tablica">
+		<thead>
+			<tr>
+				<th>Naziv proizvoda</th>
+				<th>Vrsta proizvoda</th>
+				<th>Zivotinja</th>
+				<th>Opis</th>
+				<th>Cijena</th>
+			</tr>
+		</thead>				
+		<tbody>
+		{% for product in products %}
+			<tr>
+	    		<td>{{ product.Naziv }}</td>
+	    		<td>{{ product.Vrsta }}</td>
+	    		<td>{{ product.Zivotinja }}</td>
+	    		<td>{{ product.Opis }}</td>
+	    		<td>{{ product.Cijena }}</td>				    		
+			</tr>
+			{% else %}
+				Kosarica je prazna
+		{% endfor %}					
+		</tbody>
+	</table>	
+					
+{% endblock %}
+					
+       
+

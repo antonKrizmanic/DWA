@@ -1,0 +1,82 @@
+{% extends "fantasticBeastsBasic.twig" %}
+
+{% block content %}
+<div class="form-inline">
+	<div class="form-group">
+		<label for="search">Trazeni pojam:</label>
+		<input type="text" id="search" name="search" placeholder="Upisi trazeni pojam" class="form-control ">
+	</div>
+
+	<a href="javascript:void()" onclick="deleteCookie();" class="btn btn-primary">Isprazni </a>
+</div>
+
+<table class="table table-striped" id="tablica">
+	<thead>
+    	<tr>
+        	<th>Naziv proizvoda</th>
+        	<th>Vrsta proizvoda</th>
+        	<th>Zivotinja</th>
+        	<th>Opis</th>
+        	<th>Cijena</th>
+					<th>Dodaj</th>
+        </tr>
+    </thead>
+    <tbody id="tbody">
+
+	</tbody>
+</table>
+
+<script type="text/javascript" src="js/detetction.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+      	$.ajax({
+	  		type: 'GET',
+	  		url: 'logic/popisProizvoda.php?function=1',
+	  		success: function (data) {
+	     		var proizvodi=jQuery.parseJSON(data);     		
+	     		for(i=0;i<proizvodi.length;i++){
+		      	document.getElementById("tbody").innerHTML += "<tr><td>"+proizvodi[i].Naziv+"</td><td>"	+proizvodi[i].Vrsta+"</td><td>"	+proizvodi[i].Zivotinja+"</td><td>"	+proizvodi[i].Opis+"</td><td>"+
+						proizvodi[i].Cijena+"</td><td><input type='submit' value='spremi' class='btn btn-info' onclick='setCookie(\"shop\",getCookie(\"shop\")+\",\"+\""+proizvodi[i].id+"\", 1)'></input></td></tr>";
+		      }	
+	  		}
+		});     
+    });
+    
+	$("#search").keyup(function(){		
+		var unos=$("#search").val();
+		$.ajax({
+	  		type: "GET",
+	  		url: "logic/popisProizvoda.php?function=2&var="+unos+"",
+	  		success: function (data) {	     		
+	     		$('tbody').children().remove();
+	     		var proizvodi=jQuery.parseJSON(data);     		
+	     		for(i=0;i<proizvodi.length;i++){
+		      	document.getElementById("tbody").innerHTML += "<tr><td>"+proizvodi[i].Naziv+"</td><td>"	+proizvodi[i].Vrsta+"</td><td>"	+proizvodi[i].Zivotinja+"</td><td>"	+proizvodi[i].Opis+"</td><td>"+
+						proizvodi[i].Cijena+"</td><td><input type='submit' value='spremi' class='btn btn-info' onclick='setCookie(\"shop\",getCookie(\"shop\")+\",\"+\""+proizvodi[i].id+"\", 1)'></input></td></tr>";
+		      }	
+	  		}
+		});			
+	})
+
+	function setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + "; " + expires;
+	}
+	function getCookie(cname) {
+		  	var name = cname + "=";
+		var ca = document.cookie.split(';');
+	    for(var i=0; i<ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1);
+			if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+		}
+		return "";
+	}
+	function deleteCookie(){
+		document.cookie = "shop=; expires=Thu, 01 Jan 1970 00:00:00 UTC";
+	}
+</script>
+{% endblock %}

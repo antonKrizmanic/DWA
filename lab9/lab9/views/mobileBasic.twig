@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>{{title}}</title>	
+	<link href="vendor/twbs/bootstrap//dist/css/bootstrap.min.css" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="css/stil.css">	
+</head>
+<body>		
+		<div data-role="page">
+			<header class="page-header" data-role="header">				
+				<div>
+					<div>						
+						<img src="img/fantBeastsLogo.png" alt="Fantastic beasts logo" class="img-responsive">
+					</div>
+					<div>											
+						<a href="logout" class="odjava">Odjava!!!!!</a>
+					</div>
+				</div>
+				<nav>
+					<ul class="nav">
+						<li><a href="zivotopis">Zivotopis</a></li>
+						<li><a href="popisProizvoda">Popis proizvoda</a></li>						
+						<li><a href="unos">Unos proizvoda</a></li>
+						<li><a href="kosarica">Kosarica</a></li>
+					</ul>
+				</nav>
+			</header>			
+			
+			<section data-role="main">
+				{% block content %}
+	   	 
+	
+				{% endblock %}
+				
+				
+			</section>
+				
+			
+			
+			<div data-role="footer">		
+					<footer class="container" >		
+							<p>Copyright Fantastic beasts, 2016</p>		
+					</footer>		
+			</div>
+		</div>
+</body>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.4.5.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</html>

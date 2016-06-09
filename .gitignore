@@ -102,3 +102,10 @@ lab8/.vagrant/machines/default/virtualbox/action_provision
 lab8/.vagrant/machines/default/virtualbox/action_set_name
 lab8/.vagrant/machines/default/virtualbox/id
 lab8/.vagrant/machines/default/virtualbox/synced_folders
+
+lab9/.vagrant/machines/default/virtualbox/index_uuid
+lab9/.vagrant/machines/default/virtualbox/creator_uid
+lab9/.vagrant/machines/default/virtualbox/action_provision
+lab9/.vagrant/machines/default/virtualbox/action_set_name
+lab9/.vagrant/machines/default/virtualbox/id
+lab9/.vagrant/machines/default/virtualbox/synced_folders

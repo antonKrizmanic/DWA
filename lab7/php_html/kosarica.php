@@ -1,5 +1,4 @@
 <?php		
-		
 	session_start();
 	if($_SESSION['username'] !="korisnik" || $_SESSION['password'] !="korisnik"){
 		header('Location: login.html');
@@ -26,6 +25,4 @@
     	'cache' => false,
 	));
 	echo $twig->render('kosarica.html', array('products' => $products));
-	
-
 ?>
